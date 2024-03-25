@@ -1,11 +1,11 @@
 name: Deploy webpage
 
-# We combine both `main` and `upcoming` into a single webpage
+# We combine both `main` and `dev` into a single webpage
 on:
   push:
     branches:
       - 'main'
-      # - 'upcoming'
+      - 'dev'
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -46,7 +46,7 @@ jobs:
           cache: yarn
           cache-dependency-path: |
             main/website/yarn.lock
-            upcoming/website/yarn.lock
+            dev/website/yarn.lock
 
       - name: Install dependencies (main)
         working-directory: main/website
@@ -75,7 +75,7 @@ jobs:
       - name: Combine `main`, `dev` 
         run: |
           mv main/website/build combined
-          mv upcoming/website/build combined/dev
+          mv dev/website/build combined/dev
 
 
       - name: Upload webpage artifact
