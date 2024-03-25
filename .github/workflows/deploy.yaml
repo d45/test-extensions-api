@@ -33,11 +33,11 @@ jobs:
           ref: main
           path: main
 
-      - name: Checkout upcoming
+      - name: Checkout dev
         uses: actions/checkout@v3
         with:
-          ref: upcoming
-          path: upcoming
+          ref: dev
+          path: dev
 
       - name: Setup node
         uses: actions/setup-node@v3
@@ -52,9 +52,9 @@ jobs:
         working-directory: main/website
         run: yarn install --frozen-lockfile
 
-      - name: Download language docs
-        working-directory: main/website
-        run: yarn ts-node download_links.ts docs_py docs_cxx docs_java docs_dotnet
+      # - name: Download language docs
+      #   working-directory: main/website
+      #   run: yarn ts-node download_links.ts docs_py docs_cxx docs_java docs_dotnet
 
       - name: Build webpage for `main` branch
         working-directory: main/website
@@ -63,12 +63,12 @@ jobs:
           GITHUB_ORIGIN: ${{ steps.setup-pages.outputs.origin }}
           GITHUB_BASE_PATH: ${{ steps.setup-pages.outputs.base_path }}
 
-      - name: Install dependencies (upcoming)
-        working-directory: upcoming/website
+      - name: Install dependencies (dev)
+        working-directory: dev/website
         run: yarn install --frozen-lockfile
 
-      - name: Build webpage for `upcoming` branch
-        working-directory: upcoming/website
+      - name: Build webpage for `dev` branch
+        working-directory: dev/website
         run: yarn build
         env:
           GITHUB_ORIGIN: ${{ steps.setup-pages.outputs.origin }}
