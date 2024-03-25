@@ -75,7 +75,7 @@ jobs:
       - name: Combine `main`, `dev` 
         run: |
           mv main/website/build combined
-          mv upcoming/website/build combined/upcoming
+          mv upcoming/website/build combined/dev
 
 
       - name: Upload webpage artifact
