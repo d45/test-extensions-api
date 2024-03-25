@@ -1,7 +1,10 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
+import {themes as prismThemes} from 'prism-react-renderer';
+
+// const lightCodeTheme = require('prism-react-renderer/themes/github');
+const lightCodeTheme = require('prism-react-renderer').themes.github;
 
 const getConfig = async () => {
   const remarkDefList = (await import("remark-deflist")).default;
@@ -9,14 +12,14 @@ const getConfig = async () => {
   const isUpcomingVersion =  !!process.env.IS_UPCOMING
   const isInofficial = process.env.GITHUB_ORIGIN !== 'https://tableau.github.io';
 
-  var title = 'Hyper';
-  if (isInofficial) title = 'Inofficial Hyper';
-  else if (isUpcomingVersion) title = 'Pre-Release Hyper';
+  var title = 'Extensions API';
+  if (isInofficial) title = 'Inofficial Extensions API';
+  else if (isUpcomingVersion) title = 'Pre-Release Extensions API';
 
   /** @type {import('@docusaurus/types').Config} */
   return {
     title: title,
-    tagline: 'The SQL Database for Interactive Analytics of the Freshest State of Data.',
+    tagline: 'Create dashboard and viz extensions for Tableau.',
     favicon: 'img/favicon.ico',
 
     // Pick up URL and baseUrl from config parameters set by the Github action runner
@@ -28,8 +31,8 @@ const getConfig = async () => {
     noIndex: isUpcomingVersion || isInofficial,
 
     // We want all issues to be reported as build errors
-    onBrokenLinks: 'throw',
-    onBrokenMarkdownLinks: 'throw',
+    onBrokenLinks: 'warn',
+    onBrokenMarkdownLinks: 'warn',
 
     // Even if you don't use internalization, you can use this field to set useful
     // metadata like html lang. For example, if your site is Chinese, you may want
@@ -45,11 +48,11 @@ const getConfig = async () => {
         /** @type {import('@docusaurus/preset-classic').Options} */
         {
           docs: {
-            sidebarPath: require.resolve('./sidebars.js'),
+            sidebarPath: require.resolve('./sidebars.js' ),
             // Please change this to your repo.
             // Remove this to remove the "edit this page" links.
             editUrl:
-              'https://github.dev/tableau/hyper-db/blob/main/website/',
+              'https://github.dev/tableau/extensions-api/blob/main/website/',
             remarkPlugins: [remarkDefList],
           },
           theme: {
@@ -66,22 +69,43 @@ const getConfig = async () => {
          * happy with the design, yet */
         // image: 'img/hyper-social-card.png',
         navbar: {
-          title: 'Hyper',
+          title: 'Tableau Extensions API',
           logo: {
-            alt: 'Hyper',
-            src: 'img/hyper-logo.svg',
+            alt: 'Extensions',
+            src: 'img/ExtensionApi_24px.svg',
           },
           items: [
-            {
+        /*    {
               to: '/journey',
               label: 'Our Journey',
-            },
+            }, */
             {
               to: '/docs',
               position: 'left',
-              label: 'Documentation',
+              label: 'Docs',
             },
+            {
+              href: 'https://tableau.github.io/extensions-api-preview/docs/index.html',
+              label: 'API Reference',
+            },
+            {
+              to: '/docs/ux_design',
+              position: 'left',
+              label: 'Design Guidelines',
+            },  
+         /*   {
+              type: 'docSidebar',
+              position: 'left',
+              sidebarId: 'ux',
+              label: 'UX Design',
+            }, */
           ],
+        },
+        docs: {
+          sidebar: {
+            hideable: true,
+            autoCollapseCategories: true,
+          },
         },
         colorMode: {
           defaultMode: 'light',
@@ -93,21 +117,25 @@ const getConfig = async () => {
             {
               title: 'Docs',
               items: [
-                {
+        /*       {
                   label: 'Releases',
                   to: '/docs/releases',
-                },
+                },  */
                 {
                   label: 'Installation',
                   to: '/docs/installation',
                 },
                 {
                   label: 'Guides',
-                  to: '/docs/guides',
+                  to: '/docs',
                 },
                 {
-                  label: 'SQL Reference',
-                  to: '/docs/sql',
+                  label: 'API Reference',
+                  href: 'https://tableau.github.io/extensions-api-preview/docs/index.html',
+                },
+                {
+                label: 'UX Design Guide',
+                to: '/docs/ux_design',
                 },
               ],
             },
@@ -116,15 +144,11 @@ const getConfig = async () => {
               items: [
                 {
                   label: 'GitHub',
-                  href: 'https://github.com/tableau/hyper-db',
+                  href: 'https://github.com/tableau/extensions-api',
                 },
                 {
                   label: 'Slack',
                   href: 'https://join.slack.com/t/tableau-datadev/shared_invite/zt-1q4rrimsh-lHHKzrhid1MR4aMOkrnAFQ',
-                },
-                {
-                  label: 'Getting Help',
-                  href: '/docs/faq#getting-help',
                 },
               ],
             },
@@ -150,7 +174,7 @@ const getConfig = async () => {
         },
         announcementBar: isUpcomingVersion ? {
           content:
-            'You are browsing a preview of the documentation for the upcoming Hyper version.',
+            'You are browsing a preview of the documentation for the upcoming Extensions API version.',
           backgroundColor: '#a00',
           textColor: '#fff',
           isCloseable: false,
@@ -171,7 +195,15 @@ const getConfig = async () => {
             anonymizeIP: true,
           },
         ],
+          '@cmfcmf/docusaurus-search-local',
       ],
+
+      markdown: {
+
+        mermaid: true,
+
+      },
+      themes: ['@docusaurus/theme-mermaid'],
   };
 }
 

@@ -9,7 +9,7 @@ import styles from './index.module.css';
 
 function HomepageHeader() {
     const { siteConfig } = useDocusaurusContext();
-    const logoSrc = useBaseUrl('/img/hyper-logo.svg');
+    const logoSrc = useBaseUrl('/img/flex.png');
     return (
         <header className={clsx('hero', styles.heroBanner)}>
             <div className="container">
@@ -18,7 +18,7 @@ function HomepageHeader() {
                 <p className="hero__subtitle">{siteConfig.tagline}</p>
                 <div className={styles.buttons}>
                     <Link className="button button--secondary button--lg" to="/docs/">
-                        Get Started with Hyper
+                        Get Started with the Tableau Extensions API
                     </Link>
                 </div>
             </div>

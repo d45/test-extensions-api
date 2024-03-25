@@ -2,122 +2,111 @@
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
-  docs: [
+  Docs: [
     "index",
-    "releases",
     'installation',
     {
       type: 'category',
-      label: 'Guides',
-      link: { type: 'doc', id: 'guides/index' },
+      label: 'Viz Extensions',
+      link: { type: 'doc', id: 'vizext/index' },
       items: [
-        'guides/sql_commands',
-        'guides/pandas_integration',
-        'guides/hyper_file/create_update',
-        'guides/hyper_file/read',
-        'guides/hyper_file/insert_csv',
-        'guides/hyper_file/geodata',
-        'guides/hyper_file/optimize',
-        'guides/hyper_file/publish',
+        'vizext/trex_viz_getstarted',
+        'vizext/trex_viz_overview',
+        'vizext/trex_viz_create',
+        'vizext/trex_viz_debug_server',
+        'vizext/trex_viz_manifest',
+        'vizext/trex_viz_examples',
+      ],
+    }, 
+    {
+      type: 'category',
+      label: 'Dashboard Extensions',
+      link: { type: 'doc', id: 'dashext/index' },
+      items: [
+        'dashext/trex_getstarted',
+        'dashext/trex_create',
+        'dashext/trex_overview',
+        'dashext/trex_debug_server', 
+        'dashext/trex_manifest',
+        'dashext/trex_examples', 
+      ],
+    }, 
+    { 
+      type: 'category',
+      label: 'Basic Concepts',
+      link: {  type: 'doc', id: 'index' },
+      items: [
+      'trex_api_about',
+      'trex_reload',
+    ],
+    },
+
+    {
+      type: 'category',
+      label: 'API Reference',
+      link: { href: "https://github.com/tableau/hyper-api-samples" },
+      items: [
+      { type: 'link', label: "Examples", href: "https://github.com/tableau/extensions-api-preview/tree/main/Samples" },
+      { type: 'link', label: "API Reference", href: "https://tableau.github.io/extensions-api-preview/docs/index.html" },
+   
+      ],
+    }, 
+
+
+  ],
+
+  Design: [
+    "ux_design",
+    {
+      type: 'category',
+      label: 'Interaction Guidelines',
+      items: [
+        'Interaction_Guidelines/ux_build_test',
+        'Interaction_Guidelines/ux_components_modes',
+        'Interaction_Guidelines/ux_controls_ui_patterns',
       ],
     },
     {
       type: 'category',
-      label: 'Client-side API',
-      link: { type: 'doc', id: 'hyper-api/index' },
+      label: 'Style Guidelines',
       items: [
-        'hyper-api/hyper_process',
-        'hyper-api/connection',
-        { type: 'link', label: "Examples", href: "https://github.com/tableau/hyper-api-samples" },
-        { type: 'link', label: "Python Reference", href: "pathname:///lang_docs/py/index.html" },
-        { type: 'link', label: "C++ Reference", href: "pathname:///lang_docs/cxx/index.html" },
-        { type: 'link', label: ".NET Reference", href: "pathname:///lang_docs/dotnet/api/index.html" },
-        { type: 'link', label: "Java Reference", href: "pathname:///lang_docs/java/overview-summary.html" },
+        'Style_Guidelines/ux_branding',
+        'Style_Guidelines/ux_layout',
+        'Style_Guidelines/ux_color',
+        'Style_Guidelines/ux_fonts',
       ],
     },
-    {
-      type: 'category',
-      label: 'SQL Reference',
-      link: { type: 'doc', id: 'sql/index' },
-      items: [
-        'sql/syntax',
-        {
-          type: 'category',
-          label: 'SQL Commands',
-          link: { type: 'doc', id: 'sql/command/index' },
-          items: [
-            'sql/command/select',
-            'sql/command/table',
-            'sql/command/values',
-            'sql/command/insert',
-            'sql/command/update',
-            'sql/command/delete',
-            'sql/command/truncate',
-            'sql/command/copy_from',
-            'sql/command/copy_to',
-            'sql/command/create_database',
-            'sql/command/create_schema',
-            'sql/command/create_table',
-            'sql/command/create_table_as',
-            'sql/command/create_external_table',
-            'sql/command/alter_schema',
-            'sql/command/alter_table',
-            'sql/command/drop_table',
-            'sql/command/drop_schema',
-            'sql/command/drop_database',
-            'sql/command/explain',
-            'sql/command/prepare',
-            'sql/command/execute',
-            'sql/command/deallocate',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Data Types',
-          link: { type: 'doc', id: 'sql/datatype/index' },
-          items: [
-            "sql/datatype/boolean",
-            "sql/datatype/string",
-            "sql/datatype/numeric",
-            "sql/datatype/datetime",
-            "sql/datatype/binary",
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Scalar Functions and Operators',
-          link: { type: 'doc', id: 'sql/scalar_func/index' },
-          items: [
-            "sql/scalar_func/conversion",
-            "sql/scalar_func/comparison",
-            "sql/scalar_func/subquery_comparison",
-            "sql/scalar_func/logical",
-            "sql/scalar_func/conditional",
-            "sql/scalar_func/math",
-            "sql/scalar_func/string",
-            "sql/scalar_func/string_matching",
-            "sql/scalar_func/formatting",
-            "sql/scalar_func/datetime",
-            "sql/scalar_func/geography",
-          ],
-        },
-        "sql/aggregate",
-        "sql/window",
-        "sql/setreturning",
-        {
-          type: 'category',
-          label: 'External Formats',
-          link: { type: 'doc', id: 'sql/external/index' },
-          items: [
-            "sql/external/syntax",
-            "sql/external/formats",
-            "sql/external/location",
-          ],
-        },
-      ],
-    },
-    "faq",
+    "ux_extension_gallery",
   ],
 };
 
-module.exports = sidebars;
+/*
+const uxSidebar = {
+  docs: [
+    "ux_design",
+    {
+      type: 'category',
+      label: 'Interaction Guidelines',
+      items: [
+        'Interaction_Guidelines/ux_build_test',
+        'Interaction_Guidelines/ux_components_modes',
+        'Interaction_Guidelines/ux_control_ui_patterns',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Style Guidelines',
+      items: [
+        'Style_Guidelines/ux_branding',
+        'Style_Guidelines/ux_layout',
+        'Style_Guidelines/ux_color',
+        'Style_Guidelines/ux_fonts',
+      ],
+    },
+    "ux_extension_gallery",
+  ],
+
+
+}; */
+
+module.exports = { sidebars };
