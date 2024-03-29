@@ -12,9 +12,9 @@ const getConfig = async () => {
   const isUpcomingVersion =  !!process.env.IS_UPCOMING
   const isInofficial = process.env.GITHUB_ORIGIN !== 'https://tableau.github.io';
 
-  var title = 'Extensions API';
-  if (isInofficial) title = 'Inofficial Extensions API';
-  else if (isUpcomingVersion) title = 'Pre-Release Extensions API';
+  var title = 'Tableau Extensions API';
+  if (isInofficial) title = 'Unofficial Extensions API';
+  else if (dev) title = 'Pre-Release Extensions API';
 
   /** @type {import('@docusaurus/types').Config} */
   return {
