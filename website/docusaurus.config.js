@@ -85,7 +85,7 @@ const getConfig = async () => {
               label: 'Docs',
             },
             {
-              href: 'https://tableau.github.io/extensions-api-preview/docs/index.html',
+              to: 'pathname:///api',
               label: 'API Reference',
             },
             {
@@ -115,7 +115,7 @@ const getConfig = async () => {
           style: 'dark',
           links: [
             {
-              title: 'Docs',
+              title: 'Learn',
               items: [
         /*       {
                   label: 'Releases',
@@ -126,12 +126,12 @@ const getConfig = async () => {
                   to: '/docs/installation',
                 },
                 {
-                  label: 'Guides',
+                  label: 'Documentation',
                   to: '/docs',
                 },
                 {
                   label: 'API Reference',
-                  href: 'https://tableau.github.io/extensions-api-preview/docs/index.html',
+                  to: 'pathname:///api',
                 },
                 {
                 label: 'UX Design Guide',
@@ -174,7 +174,7 @@ const getConfig = async () => {
         },
         announcementBar: isUpcomingVersion ? {
           content:
-            'You are browsing a preview of the documentation for the upcoming Extensions API version.',
+            'You are browsing a preview of the documentation for the upcoming Extensions API release.',
           backgroundColor: '#a00',
           textColor: '#fff',
           isCloseable: false,

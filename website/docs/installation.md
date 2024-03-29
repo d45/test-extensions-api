@@ -1,6 +1,6 @@
 ---
 title: Installation
-description: installation instructions
+description: Installation instructions
 ---
 
 
