@@ -8,7 +8,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Viz Extensions',
-      link: { type: 'doc', id: 'vizext/index' },
+      link: { type: 'doc', id: 'vizext/index' }, 
       items: [
         'vizext/trex_viz_getstarted',
         'vizext/trex_viz_overview',
@@ -21,7 +21,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Dashboard Extensions',
-      link: { type: 'doc', id: 'dashext/index' },
+      link: { type: 'doc', id: 'dashext/index' }, 
       items: [
         'dashext/trex_getstarted',
         'dashext/trex_create',
@@ -44,10 +44,10 @@ const sidebars = {
     {
       type: 'category',
       label: 'API Reference',
-      link: { href: "https://github.com/tableau/hyper-api-samples" },
+   /*   link: { href: "https://github.com/tableau/hyper-api-samples" }, */
       items: [
       { type: 'link', label: "Examples", href: "https://github.com/tableau/extensions-api-preview/tree/main/Samples" },
-      { type: 'link', label: "API Reference", href: "https://tableau.github.io/extensions-api-preview/docs/index.html" },
+      { type: 'link', label: "API Reference",  href: 'pathname:///api' },
    
       ],
     }, 
