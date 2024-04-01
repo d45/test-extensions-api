@@ -14,7 +14,7 @@ const getConfig = async () => {
 
   var title = 'Tableau Extensions API';
   if (isInofficial) title = 'Unofficial Extensions API';
-  else if (dev) title = 'Pre-Release Extensions API';
+  else if (isUpcomingVersion) title = 'Pre-Release Extensions API';
 
   /** @type {import('@docusaurus/types').Config} */
   return {
