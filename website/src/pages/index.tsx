@@ -10,10 +10,16 @@ import styles from './index.module.css';
 function HomepageHeader() {
     const { siteConfig } = useDocusaurusContext();
     const logoSrc = useBaseUrl('/img/flex.png');
+    const tileViz = useBaseUrl('/img/Scatterplot_rendering.gif');
+    const logoTab = useBaseUrl('/img/tableau-logo.svg');
+    const tileSankey = useBaseUrl('/img/Sankey.png');
+    const logoExt = useBaseUrl('/img/ExtensionApi_24px.svg');
+    
     return (
         <header className={clsx('hero', styles.heroBanner)}>
             <div className="container">
-                <img src={logoSrc} className={styles.heroLogo} />
+                <img src={logoTab} className={styles.heroLogo} />
+                <img src={logoExt} className={styles.heroLogo} />
                 <h1 className="hero__title">{siteConfig.title}</h1>
                 <p className="hero__subtitle">{siteConfig.tagline}</p>
                 <div className={styles.buttons}>
