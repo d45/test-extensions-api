@@ -75,14 +75,10 @@ const getConfig = async () => {
             src: 'img/ExtensionApi_24px.svg',
           },
           items: [
-        /*    {
-              to: '/journey',
-              label: 'Our Journey',
-            }, */
             {
               to: '/docs',
               position: 'left',
-              label: 'Docs',
+              label: 'Guides',
             },
             {
               to: 'pathname:///api',
@@ -109,7 +105,7 @@ const getConfig = async () => {
         },
         colorMode: {
           defaultMode: 'light',
-          disableSwitch: true,
+          disableSwitch: false,
         },
         footer: {
           style: 'dark',
@@ -126,7 +122,7 @@ const getConfig = async () => {
                   to: '/docs/installation',
                 },
                 {
-                  label: 'Documentation',
+                  label: 'Guides',
                   to: '/docs',
                 },
                 {

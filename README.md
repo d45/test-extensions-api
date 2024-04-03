@@ -30,9 +30,16 @@ Github Actions are configured to automatically test for changes.
 For simple typo or wording fixes, you don't need a peer review - feel free to just go ahead and merge.
 For actual new content, we encourage to get at least one peer review.
 
-Documentation changes which apply right away to the already available Hyper version should be merged directly to `main`.
-If your documentation only applies to the upcoming Hyper version, merge your changes into the `upcoming` branch instead.
+The released or production documentation is served from the `main` branch.
+Changes or updates should first be checked into the `dev` branch and then merged to `main` when ready for public release.
 
 ### Deployment
 
 As soon as your pull request to https://github.com/tableau/test-extensions-api is merged to `main`, the new web page will be deployed automatically within a couple of minutes.
+
+### View the docs
+
+| Branch | URL |
+|---- |---- |
+| `dev` | [https://d45.github.io/test-extensions-api/dev](https://d45.github.io/test-extensions-api/dev) |
+| `main` | [https://d45.github.io/test-extensions-api](https://d45.github.io/test-extensions-api/)  |
