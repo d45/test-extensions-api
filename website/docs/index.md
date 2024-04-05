@@ -1,6 +1,6 @@
 # Tableau Extensions API
 
-The Tableau Extensions API allows developers to create dashboard extensions and viz extensions for Tableau. Tableau extensions are web applications that can interact and communicate with Tableau. A dashboard extension can be placed in the dashboard like any other dashboard object. A Tableau viz creates new viz types that Tableau users can access through the worksheet Marks card.
+The Tableau Extensions API allows developers to create dashboard extensions and viz extensions for Tableau. Tableau extensions are web applications that can interact and communicate with Tableau. A dashboard extension can be placed in the dashboard like any other dashboard object. A Tableau viz extension creates new viz types that Tableau users can access through the worksheet Marks card.
 
 :::note
 
