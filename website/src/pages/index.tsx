@@ -14,7 +14,7 @@ function HomepageHeader() {
     const logoTab = useBaseUrl('/img/tableau-logo.svg');
     const tileSankey = useBaseUrl('/img/Sankey.png');
     const logoExt = useBaseUrl('/img/ExtensionApi_24px.svg');
-    
+
     return (
         <header className={clsx('hero', styles.heroBanner)}>
             <div className="container">
