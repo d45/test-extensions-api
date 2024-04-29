@@ -41,6 +41,16 @@ const sidebars = {
     ],
     },
 
+    { 
+      type: 'category',
+      label: 'Debugging and Troubleshooting',
+      link: {  type: 'doc', id: 'index' },
+      items: [
+      'trex_debugging',
+      'trex_logging',
+    ],
+    },
+
     {
       type: 'category',
       label: 'API Reference',
