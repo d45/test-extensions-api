@@ -5,23 +5,20 @@ tags: [Getting started]
 
 The Tableau Viz Extensions API allows developers to create new viz types that Tableau users can access through the worksheet Marks card. Like Dashboard Extensions, Viz Extensions are web applications that can interact and communicate with Tableau. Developers will be able to build bespoke Viz Extensions that can be made available to Tableau users through the Tableau Extensions API.
 
+This section will take you through the process of setting up your environment to use one of the sample viz extensions. Using one of the sample extensions is a great way to learn and great way to get started developing your own extensions. In this section, you will start a simple web server on your computer to host the sample. You can use the same process for hosting the extension when you start developing your own.
+
 :::note
 
-If you are looking for information about how to extend Tableau calculations to include popular data science programming languages and external tools, see the [Tableau Analytics Extensions API](https://tableau.github.io/analytics-extensions-api/). 
+If you are looking for information about how to use viz extensions in Tableau, see [Add Viz Extensions to Your Worksheet](https://help.tableau.com/v0.0/pro/desktop/en-us/viz_extensions.htm). If you are looking for extensions that you can use, see the [Tableau Exchange](https://exchange.tableau.com/).
 
 :::
 
-<!-- 
-<div class="alert alert-info"><b>Note</b> If you are looking for information about how to extend Tableau calculations to include popular data science programming languages and external tools, see the <a href="https://tableau.github.io/analytics-extensions-api/" target="_blank" ref="noopener">Tableau Analytics Extensions API</a>.</div>   -->
-
-This section will take you through the process of setting up your environment to use one of the sample viz extensions. Using one of the sample extensions is a great way to learn and great way to get started developing your own extensions. In this section, you will start a simple web server on your computer to host the sample. You can use the same process for hosting the extension when you start developing your own.
-
----
+----
 
 :::info
 
 **What's in a Tableau extension?**
-A Tableau extension consists of an XML manifest file (`.trex`), an web page (`.html`) that uses a Tableau-provided JavaScript library, and the JavaScript file (`.js`) (or files) that contain your extension logic. The Tableau extensions are supported on Tableau Server and Tableau Cloud.
+A Tableau extension consists of an XML manifest file (`.trex`), an web page (`.html`) that uses a Tableau-provided JavaScript library, and the JavaScript file (`.js`) (or files) that contain your extension logic. The Tableau extensions are supported on Tableau Desktop, Tableau Server, and Tableau Cloud.
 
 :::
 
@@ -31,10 +28,11 @@ A Tableau extension consists of an XML manifest file (`.trex`), an web page (`.h
 
 If you want to create an extension or work with the sample code, make sure you have followed the instructions for [installation](../installation).
 
-For the Viz Extension Developer Preview, use the Tableau preview test site:
+<!-- For the Viz Extension Developer Preview, use the Tableau preview test site:
 
 * [https://us-west-2a.online.tableau.com/#/site/vizextensionspreview/home](https://us-west-2a.online.tableau.com/#/site/vizextensionspreview/home)
 
+-->
 
 <!--
 To run extensions on Tableau Server or Tableau Cloud, support for extensions must be enabled, and depending upon the extension and the data access it requires, the extension might need to be added to the allowlist for the site. This requirement applies to both viz extensions and dashboard extensions. Viz extensions are controlled by the same settings as dashboard extensions. At the time of this preview, the documentation only refers to dashboard extensions. See
@@ -68,16 +66,16 @@ You can get the Tableau Extensions API SDK in two ways. Clone the repository if 
 
 ### Start a web server to host the sample viz extensions
 
-To use the viz extension samples, you need to start up a web server on your computer to host the HTML pages. If you downloaded or cloned the Extensions API repository, you can start the web service in the root directory of the repository on your computer. For example, if you downloaded the `extensions-api-preview-main.zip` file to your `Downloads` directory, after you extract the files, the directory would be `extensions-api-preview-main`. If you cloned the repository, the directory would be `extensions-api-preview`.
+To use the viz extension samples, you need to start up a web server on your computer to host the HTML pages. If you downloaded or cloned the Extensions API repository, you can start the web service in the root directory of the repository on your computer. For example, if you downloaded the `extensions-api-main.zip` file to your `Downloads` directory, after you extract the files, the directory would be `extensions-api-main`. If you cloned the repository, the directory would be `extensions-api`.
 
-1. Navigate to the `extensions-api-preview-main` or `extensions-api-preview` directory.
+1. Navigate to the `extensions-api-main` or `extensions-api` directory.
 
 2. To install the web server components, run the following npm command to install and build the package:
 
    **npm run build**
 
 3. To start the web server, run the following npm command:
- 
+
    **npm start**
 
     The start command runs a script to start the web server over port `8765`. You only need to install the web server components the first time. Subsequently, you can just start the web server, using **npm start**.
@@ -105,11 +103,11 @@ To use the viz extension samples, you need to start up a web server on your comp
 
 1. Under Viz Extensions, select **Add Extension**.
 
-   ![](../assets/Add_viz_ext_marks_card.png)
+   ![](../assets/viz_ext_marks_AddExt.png)
 
 1. In the Add an Extension dialog box that appears, select **Access Local Extensions**.
 
-   ![](../assets/Add_local_viz_ext.png)
+   ![](../assets/viz_ext_addlocal.png)
 
     Every Tableau extension has a manifest file (.trex) that describes the extension and identifies the location of the web application. For more information on creating a `.trex` manifest file, see [Tableau Viz Extension Manifest File](./trex_viz_manifest).
 
@@ -120,7 +118,7 @@ To use the viz extension samples, you need to start up a web server on your comp
 
 When the extension loads, the worksheet is blank, but the Marks card will show the name of the viz extension and any custom encoding tiles the extension uses.
 
-   ![](../assets/scatterplot_marks_card.png)
+   ![](../assets/viz_ext_marks_scatterplot.png)
 
 
 ### Configure the connectedScatterplot viz extension

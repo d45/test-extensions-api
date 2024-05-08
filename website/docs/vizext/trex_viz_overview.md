@@ -1,6 +1,6 @@
 ---
 title: What is a Tableau Viz Extension
-layout: docs
+description: Describes a viz extension
 ---
 
 Viz Extensions is a new feature that allows developers to create new viz types that Tableau users can access through the worksheet Marks card. Like Dashboard Extensions, Viz Extensions are web applications that can interact and communicate with Tableau. Developers will be able to build bespoke Viz Extensions that can be made available to Tableau users through the Tableau Extensions API.

@@ -5,13 +5,6 @@ layout: docs
 
 The Tableau Dashboard Extensions API allows developers to create extensions for Tableau. Tableau extensions are web applications that can interact and communicate with Tableau. A dashboard extension can be placed in the dashboard like any other dashboard object.
 
-:::note
-
-If you are looking for information about how to extend Tableau calculations to include popular data science programming languages and external tools, see the [Tableau Analytics Extensions API](https://tableau.github.io/analytics-extensions-api/).
-
-:::
-
- 
 This section will take you through the process of setting up your environment to use one of the sample dashboard extensions. Using one of the sample extensions is a great way to learn and great way to get started developing your own extensions. In this section, you will start a simple web server on your computer to host the sample. You can use the same process for hosting the extension when you start developing your own.
 
 :::note
@@ -20,60 +13,33 @@ If you are looking for information about how to add an extension to a dashboard 
 
 :::
 
+----
 
+:::info
+
+**What's in a Tableau extension?**
+A Tableau extension consists of a manifest file (`.trex`), a web page that uses a Tableau-provided JavaScript library, and the JavaScript file (or files) that contain your extension logic. The Tableau extensions are supported on Tableau Desktop, Tableau Server, and Tableau Cloud.
+
+:::
 
 ----
-*What's in a Tableau extension? <br/>
-A Tableau extension consists of a manifest file (`.trex`), a web page that uses a Tableau-provided JavaScript library, and the JavaScript file (or files) that contain your extension logic. The Tableau extensions are supported on Tableau Desktop, Tableau Server, and Tableau Cloud.*
-
----
-
-
-
 
 ### What you need to get started
 
-If you want to create an extension or work with the sample code, make sure you have the following dependencies installed:
-
-* [Git](https://git-scm.com/downloads)
-* [Node.js and npm](https://nodejs.org/en/download/)
-
-You need Node.js and npm to run the dashboard extension demos. Node.js is a JavaScript runtime. npm is a package manager for Node.js and is installed when you install Node.js.
-
-Requirements for using dashboard extensions in Tableau:
-
-* Tableau Desktop 2018.2 and later
-* Tableau Server 2018.2 and later
-* Tableau Cloud
-
-To run extensions on Tableau Server or Tableau Cloud, support for extensions must be enabled, and depending upon the extension and the data access it requires, the extension might need to be added to the safe list for the site. See
- [Manage Dashboard Extensions on Tableau Server](https://onlinehelp.tableau.com/current/server/en-us/dashboard_extensions_server.htm) or [Manage Dashboard Extensions on Tableau Cloud](https://onlinehelp.tableau.com/current/online/en-us/dashboard_extensions_server.htm) for more information.
+If you want to create an extension or work with the sample code, make sure you have followed the instructions for [installation](../installation).
 
 ----
 
-### Get the Tableau Extensions API SDK
-
-You can get the Tableau Extensions API SDK in two ways. Clone the repository if you want to contribute to the open source project or keep current with the latest changes. Download the `.zip` file if you want to view the samples and work on your own.
-
-* Open a terminal in the directory where you want to copy the Tableau Extensions SDK.  Then run the following command to clone
-   the Tableau Extensions API git repository:
-
-   `git clone https://github.com/tableau/extensions-api.git`
-
-* Download the [Tableau Extensions API SDK (.zip file)](https://github.com/tableau/extensions-api/archive/main.zip) and extract the files to your computer.
-
-
-
----
 ### Start a web server to host the sample dashboard extensions
 
-To use the dashboard extension samples, you need to start up a web server on your computer to host the HTML pages. If you downloaded or cloned the Extensions API repository, you can start the web service in the root directory of the repository on your computer. For example, if you downloaded the `extensions-api-main.zip` file to your `Downloads` directory, after you extract the files, the path might be `Downloads\extensions-api-main\extensions-api\`. 
+To use the dashboard extension samples, you need to start up a web server on your computer to host the HTML pages. If you downloaded or cloned the Extensions API repository, you can start the web service in the root directory of the repository on your computer. For example, if you downloaded the `extensions-api-main.zip` file to your `Downloads` directory, after you extract the files, the directory would be `extensions-api-main`. If you cloned the repository, the directory would be `extensions-api`.
+
+1. Navigate to the `extensions-api-main` or `extensions-api` directory.
 
 1. Navigate to the `extensions-api` directory.
 
 2. To install the web server components, run the following npm commands to install the package:
 
-   **npm install**
 
    **npm run build**
 
@@ -88,9 +54,8 @@ To use the dashboard extension samples, you need to start up a web server on you
 
     | **Note:**  The web server just serves the extension samples, which have URLs similar to the following: `http://localhost:8765/Samples/DataSources/datasources.html` This local web server is not intended to serve the Extensions API Help pages. View the Help on GitHub at [https://tableau.github.io/extensions-api](https://tableau.github.io/extensions-api).
 
+----
 
-
----
 ### Start Tableau and add an extension to the dashboard
 
 1. Start Tableau and open a workbook that has a dashboard, or open a workbook and create a new dashboard. For example, you could use one of the Tableau sample workbooks like Superstore to start with.
