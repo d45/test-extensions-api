@@ -5,6 +5,7 @@ const sidebars = {
   Guides: [
     "index",
     'installation',
+    'trex_tableau_help',
     {
       type: 'category',
       label: 'Viz Extensions',
@@ -43,11 +44,52 @@ const sidebars = {
 
     { 
       type: 'category',
+      label: 'Extension Fundamentals',
+      link: {  type: 'doc', id: 'index' },
+      items: [
+      'trex_getdata',
+      'trex_configure',
+      'trex_tableau_viz',
+      'trex_format',
+      'trex_show_hide',
+      'trex_events',
+      'trex_typescript',
+    ],
+    },
+
+    { 
+      type: 'category',
+      label: 'Security and Data Access',
+      link: {  type: 'doc', id: 'index' },
+      items: [
+      'trex_data_access',
+      'trex_security',
+      'trex_xss_guidance',
+      'trex_sandbox_test',
+      'trex_oauth',
+    ],
+    },
+
+    { 
+      type: 'category',
       label: 'Debugging and Troubleshooting',
       link: {  type: 'doc', id: 'index' },
       items: [
       'trex_debugging',
+      'trex_debug_server',
       'trex_logging',
+      'trex_error_handling',
+    ],
+    },
+
+    { 
+      type: 'category',
+      label: 'Publishing and Distribution',
+      link: {  type: 'doc', id: 'index' },
+      items: [
+      'trex_publish',
+      'trex_sandbox_publish',
+      'trex_contributing',
     ],
     },
 
@@ -56,9 +98,11 @@ const sidebars = {
       label: 'API Reference',
    /*   link: { href: "https://github.com/tableau/hyper-api-samples" }, */
       items: [
-      { type: 'link', label: "Examples", href: "https://github.com/tableau/extensions-api-preview/tree/main/Samples" },
+      { type: 'link', label: "Samples", href: "https://github.com/tableau/extensions-api-preview/tree/main/Samples" },
       { type: 'link', label: "API Reference",  href: 'pathname:///api' },
-   
+      'trex_tableau_viz_ref',
+      'trex_tableau_viz_ref_v1',
+      'trex_tableau_viz_ref_v2',
       ],
     }, 
 
