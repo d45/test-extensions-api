@@ -29,15 +29,15 @@ If you plan to make your extension available to others, using HTTPS
 
 The requirements are pretty straight-forward. If you are distributing your extension so that others can use it, the extension must be hosted on a web server that is configured to support the HTTPS protocol. 
 
-- The server that hosts your extension must have a certificate from a Certificate Authority (CA). There are many free and low cost options. Note that self-signed or test-signed certificates are not sufficient. The certificate is sometimes called an SSL certificate, as HTTPS was formerly implemented by the Secure Sockets Layer (SSL). 
+* The server that hosts your extension must have a certificate from a Certificate Authority (CA). There are many free and low cost options. Note that self-signed or test-signed certificates are not sufficient. The certificate is sometimes called an SSL certificate, as HTTPS was formerly implemented by the Secure Sockets Layer (SSL). 
 
-- In the `.trex` file for your extension, the `url` you use for the source location must start with `https://`.  If the HTTPS protocol is not specified, the extension fails registration and will not load in Tableau. The exception to this requirement is for `localhost`. If you are developing your extension, you can host it on your computer using HTTP (for example, `http://localhost`). You can also use `http://localhost` if you publish the workbook to Tableau Server. In this case, the extension must be running on the same computer as the browser you are using to access the server. 
+* In the `.trex` file for your extension, the `url` you use for the source location must start with `https://`.  If the HTTPS protocol is not specified, the extension fails registration and will not load in Tableau. The exception to this requirement is for `localhost`. If you are developing your extension, you can host it on your computer using HTTP (for example, `http://localhost`). You can also use `http://localhost` if you publish the workbook to Tableau Server. In this case, the extension must be running on the same computer as the browser you are using to access the server. 
 
-- Mixed content is not allowed. If your web application uses other libraries or resources, those assets should also use `https`, or use site-relative links. 
+* Mixed content is not allowed. If your web application uses other libraries or resources, those assets should also use `https`, or use site-relative links.
 
-- Redirects are permitted, but if they redirect to any other origin, other than the URL of the extension, those pages cannot interact with the Extensions API. For example, if the URL of your extension is `https://example.com` and you redirect to `https://myexample.com`, the page you were redirecting to (`https://myexample.com`) cannot interact with the Extensions API. 
+* Redirects are permitted, but if they redirect to any other origin, other than the URL of the extension, those pages cannot interact with the Extensions API. For example, if the URL of your extension is `https://example.com` and you redirect to `https://myexample.com`, the page you were redirecting to (`https://myexample.com`) cannot interact with the Extensions API. 
 
-- To run on Tableau Server or Tableau Cloud, your extension must be added to the safe list for the site. Server administrators or site administrators (Tableau Cloud) can add or remove extensions, and can configure how an extension requests permissions for access to data.  
+* To run on Tableau Server or Tableau Cloud, your extension must be added to the safe list for the site. Server administrators or site administrators (Tableau Cloud) can add or remove extensions, and can configure how an extension requests permissions for access to data.  
 
 ---
 
@@ -86,7 +86,7 @@ file: Example.trex
 
 ```
 
-For more information, see [Use Log files to Troubleshoot Dashboard Extensions](./trex_logging.html).
+For more information, see [Use Log files to Troubleshoot Dashboard Extensions](./trex_logging).
 
 ## Avoid mixed content - use HTTPS or site-relative paths for resources
 
@@ -125,11 +125,11 @@ Or use site-relative or protocol-agnostic links (that is, where the protocol is 
 
 While HTTPS is required, during development, you can run a web server on your local computer (`localhost`) to host the extension over HTTP. This exception also applies to Tableau Server and Tableau Cloud. 
 
-For example, you can author a workbook in Tableau Desktop that uses an extension (running as `localhost` on same computer as Tableau Desktop). You can then publish that workbook to Tableau Server or Tableau Cloud. The extension must be running on the same computer as the browser that you are using to connect to Tableau Server. The `localhost` is local to the browser. For example, the source location of an extension might be `http://localhost:8080/extension`. If you publish that extension to Tableau Server, other users can view the dashboard and extension, provided that they also have a local copy of the extension hosted on their computers and the extension is using the same URL. 
+For example, you can author a workbook in Tableau Desktop that uses an extension (running as `localhost` on same computer as Tableau Desktop). You can then publish that workbook to Tableau Server or Tableau Cloud. The extension must be running on the same computer as the browser that you are using to connect to Tableau Server. The `localhost` is local to the browser. For example, the source location of an extension might be `http://localhost:8080/extension`. If you publish that extension to Tableau Server, other users can view the dashboard and extension, provided that they also have a local copy of the extension hosted on their computers and the extension is using the same URL.
 
 Note the following considerations:
 
-- If Tableau Server is using HTTPS, your extension might not load if it is using `http://localhost`. The same situation occurs with Tableau Cloud. This is because it is generally not a good practice to embed an HTTP `<iframe>` inside of an HTTPS web page, and the default settings of most browsers will consider this as unsafe content. To temporarily allow the extension to run while you are testing, see [Load and view localhost content on sites that use secure connections]({{site.baseurl}}/docs/trex_debug_server.html#load-and-view-localhost-content-on-sites-that-use-secure-connections).
+- If Tableau Server is using HTTPS, your extension might not load if it is using `http://localhost`. The same situation occurs with Tableau Cloud. This is because it is generally not a good practice to embed an HTTP `<iframe>` inside of an HTTPS web page, and the default settings of most browsers will consider this as unsafe content. To temporarily allow the extension to run while you are testing, see [Load and view localhost content on sites that use secure connections](./trex_debug_server#load-and-view-localhost-content-on-sites-that-use-secure-connections).
 
 - In the manifest file (`.trex`) for the extension, you must specify the DNS name `localhost` and **not** the IP address (for example, `127.0.0.1`). 
 
@@ -198,7 +198,7 @@ Information about requesting and creating the TLS/SSL certificates is available 
 
 - [HTTPS (Wikepdia)](https://en.wikipedia.org/wiki/HTTPS)
 
-- If you have control over your own domain, you can request free certificates from the Certificate Authority [Let's Encrypt](https://letsencrypt.org/). 
+- If you have control over your own domain, you can request free certificates from the Certificate Authority [Let's Encrypt](https://letsencrypt.org/).
 
 - You can also request free 90 day TLS/SSL certificates from Comodo, see [Comodo Free SSL](https://ssl.comodo.com/free-ssl-certificate.php?track=8177)
 

@@ -1,6 +1,6 @@
 ---
-id: trex_viz_create
 title: Create a "Hello World" Viz Extension
+description: How to create a simple "Hello World" viz extension
 tags: [Getting started]
 ---
 
@@ -19,7 +19,7 @@ To create a Tableau viz extension you need the following components.
 
 ### What you need to get started
 
-These instructions assume that you have already cloned or download the Extensions API SDK. For information about setting up your environment and the Tableau requirements, see [Get Started](./trex_viz_getstarted.html).
+These instructions assume that you have already cloned or download the Extensions API SDK. For information about setting up your environment and the Tableau requirements, see [Get Started](./trex_viz_getstarted).
 
 For convenience, you might want to create a folder for your "Hello World" viz extension in the same location where you installed or cloned the GitHub repository. Create your folder, for example, **HelloVizExtension** in the Samples folder, under `/extensions-api-preview`. That way, you can use the same web server (`http-server`) that is used for the samples.
 
@@ -70,7 +70,7 @@ Name the manifest file for your extension (for example, `HelloVizExtension` and 
 
 - After you have created the HTML and JavaScript files for your extension, you use this `.trex` file to add the extension to a Tableau worksheet. To do that, open a worksheet, on the **Marks** card, expand the Mark Type drop-down menu. Under Viz Extensions, select **Add Extensions**. In the **Add an Extension** dialog box that appears, select **Access Local Extensions**. Browse to the location where you put the manifest file you just created, for example, the `HelloVizExtension` folder and select the `HelloVizExtensions.trex` file.
 
-- For information about the manifest file and about adding version information, see the [Tableau Viz Extension Manifest](./trex_viz_manifest.html).
+- For information about the manifest file and about adding version information, see the [Tableau Viz Extension Manifest](./trex_viz_manifest).
 
 
 ---
@@ -272,7 +272,6 @@ The next step is to create the JavaScript that calls the Extensions API. In your
 
 1. Drag some fields on to the **Drop** tile on the Marks card. The name of the fields that you've added to the Marks card are displayed in the worksheet. Every time you add or remove a field, the names are updated.
 
-
 ### About the example code
 
 This example illustrates some of the components that are common need to include in your viz extension.
@@ -297,8 +296,7 @@ This example illustrates some of the components that are common need to include 
 
 ### Debugging and testing your extension in Tableau
 
-For information about debugging your extension, see [Debug Extensions in Tableau Server and Tableau Cloud](./docs/trex_viz_debug_server.html).
-
+For information about debugging your extension, see [Debug Extensions in Tableau Server and Tableau Cloud](../trex_debug_server).
 
 ### Code Style
 
@@ -312,7 +310,7 @@ Our sample code follows the [Semi-Standard Style](https://github.com/Flet/semist
 
 - For more information about how you can use the Extensions API, go look at the [Samples](https://github.com/tableau/extensions-api-preview/tree/main/Samples/). Study the sample, connectedScatterPlot, to see a full implementation of a viz extension.
 
-- Get familiar with the programming interface of the Extensions API, see <a href="../docs/index.html" target="_blank">API Reference</a>.
+- Get familiar with the programming interface of the Extensions API, see [API Reference](pathname:///api/).
 
 - If you use the local web server in the Extensions API SDK to host your own viz extensions, you can take advantage of the [d3](https://d3js.org/) libraries that are installed locally. When you run the **npm run build** command in the root directory of the repo, the d3 libraries are installed the `node_modules` directory. To use the libraries, add the path to your HTML file. For example, the `ConnectedScatterplot` and `Sankey` samples are in the Samples directory and include the following relative path to the d3 library:  
 

@@ -8,7 +8,7 @@ The `createVizImageAsync` method takes a single argument, the `inputSpec`, a Jav
 Starting with Tableau 2022.3, you can use version 2 of the `inputSpec` to create combination charts and dual-axis visualizations. 
 Version 2 of the `inputSpec` allows you to specify different mark types for the measures along the encoding axis (either rows or columns). 
 
-For versions of Tableau prior to 2022.3, you can use the Tableau Viz v1 `inputSpec`. The Tableau Viz v1 is supported in Tableau 2021.3 (and later). See the [Tableau Viz v1 inputSpec](./trex_tableau_viz_ref_v1.html).
+For versions of Tableau prior to 2022.3, you can use the Tableau Viz v1 `inputSpec`. The Tableau Viz v1 is supported in Tableau 2021.3 (and later). See the [Tableau Viz v1 inputSpec](./trex_tableau_viz_ref_v1).
 
 ---
 
@@ -306,11 +306,11 @@ For example, the following sets the default mark type as bar (`tableau.MarkType.
 
 ### `encodings`
  
-(Optional) This property describes how you want to encode the continuous fields on the specified encodings axis, that is, either the rows or columns shelf in Tableuu. The encodings shelf is specified with the `encodingaxis` property. You can assign a different mark type to each continuous field to create multiple pane or combination charts. If specified, the number of encoding structures should exactly match the number of continuous measures on the encoding axis. 
+(Optional) This property describes how you want to encode the continuous fields on the specified encodings axis, that is, either the rows or columns shelf in Tableau. The encodings shelf is specified with the `encodingaxis` property. You can assign a different mark type to each continuous field to create multiple pane or combination charts. If specified, the number of encoding structures should exactly match the number of continuous measures on the encoding axis. 
 
 The `endocdings` element corresponds to the Marks card in Tableau and describes how the marks for continuous fields discrete fields are encoded. In Tableau, when you drag fields onto the properties on the Marks card it encodes the data in the view. Similarly, the `encodings` property lets you set the properties of the marks for the image. <br/> 
 
-You can also map fields to the `color`, `size`, and `text` properties, but you can only specify `mark` types for continuous fields on the encodding axis. 
+You can also map fields to the `color`, `size`, and `text` properties, but you can only specify `mark` types for continuous fields on the encoding axis.
 
 Note that if there are multiple continuous fields on both columns and rows, only one set of them will get their own marks card: the first set. If you add multiple continuous fields to rows and then add multiple continuous fields to columns, there will only be marks cards for each of the continuous fields on rows.
 
@@ -320,7 +320,7 @@ Within these properties, you must specify the field to encode and its type (`tab
 
 #### encodings: `mark`
 
-(Optional) Supported mark types include: `tableau.MarkType.Bar`, `tableau.MarkType.Line`, `tableau.MarkType.Area`, `tableau.MarkType.Square`, `tableau.MarkType.Circle`, `tableau.MarkType.Text`. If no mark type is specified, the generated image will use the `mark` type specified as part of the `defaultencoding` prpoerty.
+(Optional) Supported mark types include: `tableau.MarkType.Bar`, `tableau.MarkType.Line`, `tableau.MarkType.Area`, `tableau.MarkType.Square`, `tableau.MarkType.Circle`, `tableau.MarkType.Text`. If no mark type is specified, the generated image will use the `mark` type specified as part of the `defaultencoding` property.
 
 
 #### encodings: `color`
@@ -361,8 +361,6 @@ encodings: [
 |:--- |:--- |
 | ![Tableau Continuous Palette](./assets/continuous_palette.png) | `blue_10_0` <br/>  `orange_10_0` <br/> `green_10_0` <br/> `red_10_0` <br/> `purple_10_0` <br/> `brown_10_0` <br/> `gray_10_0` <br/> `gray_warm_10_0` <br/> `blue_teal_10_0` <br/> `orange_gold_10_0` <br/> `green_gold_10_0` <br/> `red_gold_10_0` <br/> `orange_blue_diverging_10_0` <br/> `red_green_diverging_10_0` <br/> `green_blue_diverging_10_0` <br/> `red_blue_diverging_10_0` <br/> `red_black_10_0` <br/> `gold_purple_diverging_10_0` <br/> `red_green_gold_diverging_10_0` <br/> `sunrise_sunset_diverging_10_0` <br/> `orange_blue_white_diverging_10_0` <br/> `red_green_white_diverging_10_0` <br/> `green_blue_white_diverging_10_0` <br/> `red_blue_white_diverging_10_0` <br/> `red_black_white_diverging_10_0` <br/> `tableau-blue-light` <br/> `tableau-orange-light` <br/> `tableau-orange-blue-light` <br/> `tableau-map-blue-green` <br/> `tableau-map-temperatur`  |
 
-
-
 **`palette` names for discrete fields**
 
 You can specify one of the following Tableau color palettes with the `palette` property for discrete fields. Note that the list of available palettes depends upon the version of Tableau that is being used. Be aware that the palette colors are subject to change.
@@ -389,21 +387,16 @@ encoding: [
 
 ---
 
-
-
 #### Create custom color palettes
 
 You can set the color palette to a custom diverging or custom sequential color palette that you specify, and not just the Tableau defined palates, such as, `green_blue_white_diverging_10_0`.
-
 
 | Custom Palette Property |  Value |
 |:--- |:--- |
 |`tableau.VizImagePaletteType.CustomDiverging` | Defines a custom diverging palette. Specify the `start` value and an `end` value, each as a hexadecimal value. |
 | `tableau.VizImagePaletteType.CustomSequential` | Defines a custom sequential palette. Specify the `end` value as a hexadecimal value. |
 
-
 For example, you could set a custom palette as shown in the following examples:
-
 
   ```javascript
 
@@ -418,5 +411,3 @@ For example, you could set a custom palette as shown in the following examples:
    palette: {name: tableau.VizImagePaletteType.CustomSequential,  end: "#FFB6C1"},
 
   ```
-
-

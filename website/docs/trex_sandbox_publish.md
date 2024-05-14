@@ -7,13 +7,13 @@ Sandboxed Extensions are Tableau dashboard extensions that are not permitted to 
 
 ## Before publishing your extension
 
-Be sure to follow the guidelines and requirements to [Create and Test Sandboxed Extensions](./trex_sandbox_test.html). Make sure your extension works as expected in the development environment. The development environment replicates the Tableau Sandboxed Extension Hosting Cloud Service. If your extension works in the development environment, it will work when you submit the extension package to Tableau for publication.
+Be sure to follow the guidelines and requirements to [Create and Test Sandboxed Extensions](./trex_sandbox_test). Make sure your extension works as expected in the development environment. The development environment replicates the Tableau Sandboxed Extension Hosting Cloud Service. If your extension works in the development environment, it will work when you submit the extension package to Tableau for publication.
 
 
 ## Submit your Sandboxed Extension for publication
 
 After you finish developing and testing your Sandboxed Extension, fill out the [Tableau Exchange Submission form](https://tabsoft.co/gallerysubmit) with your information and details about your extension.
-For information about what goes in the form, see [Submitting your Extension to the Tableau Exchange](./ux_extension_gallery.html).
+For information about what goes in the form, see [Submitting your Extension to the Tableau Exchange](./ux_extension_gallery).
 
 Our developers from the Developer Platform team at Tableau will let you know the next steps including legal agreements after you submit your information. If you have any questions about the Tableau Exchange, send them to [extensiongallery@tableau.com](mailto:extensiongallery@tableau.com).
 

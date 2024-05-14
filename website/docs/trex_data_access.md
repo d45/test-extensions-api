@@ -19,7 +19,7 @@ For more information about the data model in Tableau, see [The Tableau Data Mode
 As a developer, you can choose the features and capabilities to implement using the Extensions API. One of these is the ability of the extension to access the underlying data in the dashboard or workbook. The `Worksheet` and `Datasource` interfaces have methods that return (as a promise) data tables containing the underlying data of the workbook or data source. The `Datasource` interface has additional methods, `getLogicalTablesAsync()`, `getActiveTablesAsync()` (Deprecated), and `getConnectionSummariesAsync()` that return the names of the active tables and fields in the data source, and the summary descriptions of the data source connections.
 
 There are many cases where you need access to this underlying data so that your extension can perform a useful function. The only requirement for access is that the users of your extension are aware of it.
-If the extension uses any of the four methods, they are considered privileged, in that they require access to underlying data and data source information. To use any one of them, you need to add a declaration to your extension's manifest file (`.trex`) that states the extension requires **full-data** permission. Tableau uses this declaration to provide a prompt to users at run time that gives them the option of allowing this access or not. 
+If the extension uses any of the four methods, they are considered privileged, in that they require access to underlying data and data source information. To use any one of them, you need to add a declaration to your extension's manifest file (`.trex`) that states the extension requires **full-data** permission. Tableau uses this declaration to provide a prompt to users at run time that gives them the option of allowing this access or not.
 
 ---
 
@@ -47,7 +47,7 @@ If you use any of these APIs, you need to add a `<permissions>` element to the m
 
 To access the underlying data along or information about the data source, the extension must declare that it requires full data access in the extension manifest file (`.trex`).
 
-The `<permissions>` element you add looks like the following: 
+The `<permissions>` element you add looks like the following:
 
 ```xml
 <dashboard-extension>
@@ -61,7 +61,7 @@ The `<permissions>` element you add looks like the following:
 </dashboard-extension>
 ```
 
-The `<permissions>` element must be added under `<dashboard-extension>` immediately following the `<icon>` element. For a complete description of the manifest, see the [Tableau Extensions Manifest File]({{site.baseurl}}/docs/trex_manifest.html).
+The `<permissions>` element must be added under `<dashboard-extension>` immediately following the `<icon>` element. For a complete description of the manifest, see the [Tableau Dashboard Extensions Manifest File](./dashext/trex_manifest) and the [Tableau Viz Extensions Manifest File](./vizext/trex_viz_manifest).
 
 If full data is not declared in the manifest file, and the extensions calls one of the APIs that accesses any underlying data or data source information, the API call fails. In addition, an error is written to the Tableau log file (`log.txt`). If you are debugging the extension with the Chromium web browser, an error is reported the console pane. The error message would look similar to the following:
 

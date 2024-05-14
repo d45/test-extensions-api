@@ -144,8 +144,8 @@ You can add multiple instances of an extension to a dashboard or to multiple das
 
 * Follow the [Tutorial (GitHub)](https://github.com/tableau/extensions-api/tree/master/Tutorial) and learn how to build a dashboard extension, step by step. If you downloaded or cloned the repository, look in the `Tutorial` folder on your computer.
 
-* For information about creating a simple "Hello World" Tableau extension, see [Create a "Hello World" Dashboard Extension]({{site.baseurl}}/docs/trex_create.html).
+* For information about creating a simple "Hello World" Tableau extension, see [Create a "Hello World" Dashboard Extension](./trex_create).
 
-* To get familiar with the programming interface for the Extensions API, see the <a href="../docs/index.html" target="_blank">API Reference</a>.
+* To get familiar with the programming interface for the Extensions API, see the [Tableau Extensions API Reference](pathname:///api).
 
-* For information about debugging your extension, see [Debug Extensions in Tableau Desktop]({{site.baseurl}}/docs/trex_debugging.html) and [Debug Extensions in Tableau Server and Tableau Cloud]({{site.baseurl}}/docs/trex_debug_server.html).
+* For information about debugging your extension, see [Debug Extensions in Tableau Desktop](../trex_debugging) and [Debug Extensions in Tableau Server and Tableau Cloud](../trex_debug_server).

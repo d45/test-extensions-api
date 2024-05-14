@@ -3,14 +3,14 @@ title: Hosting and Contributing to the Community Portal
 description: Contribute your extension to the Community
 ---
 
-Submit your extension to the [Community Extension](./community/)
+Submit your extension to the [Community Extension](https://tableau.github.io/extensions-api/community/)
 portal to share your work with other developers. To make it easier for others to use your extension,
 we ask that you include a link to a hosted version of your extension.
 
-If you don't have a hosted version yet, see our [suggestions for hosting](#suggestions-for-hosting-your-extension ).
+If you don't have a hosted version yet, see our [suggestions for hosting](#suggestions-for-hosting-your-extension).
 
-Submitting to the Community Portal
-----------------------------------
+## Submitting extensions to the Community Portal
+
 :::note
 Before you submit a extension, you'll need a GitHub account.
 :::
@@ -27,8 +27,9 @@ Before you submit a extension, you'll need a GitHub account.
 
 After that, a member of the Tableau Extensibility team will review your submission.
 
-Suggestions for hosting your extension
----------------------------------------
+## Suggestions for hosting your extension
+
+---
 
 There are several free hosting services that you can use for your extension.  You can host
 your extension anywhere you please, but we have two suggested locations that we have

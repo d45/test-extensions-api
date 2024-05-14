@@ -8,6 +8,7 @@ To provide security for customers, Tableau supports a type of dashboard or viz e
 :::note
 If your extension requires resources of outside services, you should not create a Sandboxed Extension. Dashboard and viz extensions that don't run in the sandbox environment are called Network Enabled Extensions. While Sandboxed Extensions are allowed to run by default on Tableau Server and Tableau Cloud, Network Enabled Extensions require server and site administrator approval and need to be added to safe list for a site.
 :::
+
 ---
 
 ## Sandboxed Extensions and Network Enabled Extensions
@@ -34,7 +35,7 @@ To port an existing extension, make sure all resources and libraries are local t
 
 * Resources should be placed in the same folder as your extension web page(s), or in a sub-folder of that directory. All references must be relative.
 
-* Review the suggested guidelines that all extensions should follow to reduce XSS vulnerabilities, see [Cross-Site Scripting and Extension Security](./trex_xss_guidance.html).
+* Review the suggested guidelines that all extensions should follow to reduce XSS vulnerabilities, see [Cross-Site Scripting and Extension Security](./trex_xss_guidance).
 
 * Sandboxed Extensions cannot connect to sites outside of the sandbox and cannot transfer data. For example, a Sandboxed extension cannot transfer data to be processed by other applications. If you need to connect to outside services or resources, you can create a Network Enabled extension. Network Enabled extensions can't run in the local sandbox environment or in the Tableau Hosting Cloud Service for Sandboxed Extensions.
 
@@ -46,7 +47,7 @@ To port an existing extension, make sure all resources and libraries are local t
 
 ## Sandboxed Extensions development environment
 
-The Extensions API SDK provides a local development environment that replicates the Tableau Hosting Cloud Service for Sandboxed Extensions. You can test your Sandboxed extensions locally with the same sandbox policies before submitting the extension to Tableau for publication. See [Publish Sandboxed Extensions](./trex_sandbox_publish.html) for information about making your extension available to others in the cloud service for Sandboxed Extensions. The local development environment can't be used to deploy or publish your extension.
+The Extensions API SDK provides a local development environment that replicates the Tableau Hosting Cloud Service for Sandboxed Extensions. You can test your Sandboxed extensions locally with the same sandbox policies before submitting the extension to Tableau for publication. See [Publish Sandboxed Extensions](./trex_sandbox_publish) for information about making your extension available to others in the cloud service for Sandboxed Extensions. The local development environment can't be used to deploy or publish your extension.
 
 ---
 
@@ -166,15 +167,14 @@ The `<url>` for `<source-location>` must use the name of local server (`localhos
 
 After you update the `.trex` file to point to the sandboxed instance, you can start the local sandbox sever (**npm run start-sandbox**), and then open Tableau and try it out.
 
-For information about making your Sandboxed Extension available to others, see [Publish Sandboxed Extensions](./trex_sandbox_publish.html).
+For information about making your Sandboxed Extension available to others, see [Publish Sandboxed Extensions](./trex_sandbox_publish).
 The local development environment can't be used to deploy or publish your extension.
 
 
 ## Troubleshoot the test environment
 
-To troubleshoot issues with your Sandboxed Extension in the test environment, you should start a debugger so you can observe if there are any problems with your setup, such as missing files and resources, and to see if there are any instances where your extension generates any CSP errors and warnings. For information about using debugging tools, see [Debug Extensions in Tableau Desktop](.\trex_debugging.html).
+To troubleshoot issues with your Sandboxed Extension in the test environment, you should start a debugger so you can observe if there are any problems with your setup, such as missing files and resources, and to see if there are any instances where your extension generates any CSP errors and warnings. For information about using debugging tools, see [Debug Extensions in Tableau Desktop](./trex_debugging).
 
 Error `Cannot find extension with id: <xxxxxx>`
 
 If you see this error in the console of your debugging tools, be sure the name (or ID) of the extension in the `sandbox-config.json` file matches the name you specified in the `<url>` in the `.trex` file.
-

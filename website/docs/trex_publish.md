@@ -23,7 +23,7 @@ However, to run on Tableau Server or Tableau Cloud, your extension must:
 * Be granted permission to run on Tableau Server or Tableau Cloud. 
 
 :::note
-If you want to test your extension with Tableau Cloud and you are running an extension on `http://localhost` during development, see [Load and view localhost content on sites that use secure connections](./trex_security.html#load-and-view-localhost-content-on-sites-that-use-secure-connections)
+If you want to test your extension with Tableau Cloud and you are running an extension on `http://localhost` during development, see [Load and view localhost content on sites that use secure connections](./trex_security#load-and-view-localhost-content-on-sites-that-use-secure-connections)
 
 :::
 
@@ -61,15 +61,15 @@ Dashboard extensions that appear in the Tableau Exchange must also:
 
 * Ensure that the information in the extension manifest file (`.trex`) matches the content that you will publish in the Tableau Exchange. For example, the `name`, `description` fields are used to populate the name and description fields in the Tableau Exchange.  The icon you use in the manifest should also be the icon that is used in the Exchange. You need to provide a 280x280 pixel `.png` version of the icon. 
 
-For information about getting your extension into the Tableau Exchange, see [Submitting your Extension to the Tableau Exchange](./ux_extension_gallery.html).
+For information about getting your extension into the Tableau Exchange, see [Submitting your Extension to the Tableau Exchange](./ux_extension_gallery).
 
-For information about designing an extension, see [Design Guidelines for Dashboard Extensions](./ux_design.html).
+For information about designing an extension, see [Design Guidelines for Dashboard Extensions](./ux_design).
 
 ![](./assets/trex_gallery.png)
 
 ## Publishing or sharing a dashboard extension on the Communities page
 
-Another way to share your work with other developers is to add it to the [Community Portal for Dashboard Extensions](./community/). You can use the portal to provide links to your source code and you can also provide a `.trex` file for users to download. To make it easier for others to use your extension, we ask that your `.trex` file specifies a link to a hosted version of your extension
-See [Hosting and Contributing to the Community Portal](./trex_contributing.html)
+Another way to share your work with other developers is to add it to the [Community Portal for Dashboard Extensions](pathname:///community/). You can use the portal to provide links to your source code and you can also provide a `.trex` file for users to download. To make it easier for others to use your extension, we ask that your `.trex` file specifies a link to a hosted version of your extension
+See [Hosting and Contributing to the Community Portal](./trex_contributing)
 
-Submit your extension to the [Community Portal for Dashboard Extensions](./community/)
+Submit your extension to the [Community Portal for Dashboard Extensions](pathname:////community/)

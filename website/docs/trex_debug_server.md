@@ -1,16 +1,16 @@
 ---
 title: Debug Extensions in Tableau Server and Tableau Cloud 
-layout: docs
+description: How to debug extensions on Tableau Cloud and Tableau Server
 ---
 
-A dashboard extension is a web app inside of a dashboard on Tableau Server and Tableau Cloud. If you add an extension to a dashboard in web authoring, or publish a dashboard that contains a dashboard extension to Tableau Server or Tableau Cloud, you can debug the extension using the debugging tools that are built into the browser that you are using.
+Dashboard and viz extension are web apps that run inside of a dashboard or a worksheet on Tableau Server and Tableau Cloud. If you add an extension in web authoring, or publish a dashboard or worksheet that contains an extension to Tableau Server or Tableau Cloud, you can debug the extension using the debugging tools that are built into the browser that you are using.
 
 The following section describes how you could debug your extension using Chrome. The same principles generally apply if you are using other browsers and their developer tools. For more information about the Chrome developer tools, see [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/). For more information about debugging JavaScript with the DevTools, see [Debug JavaScript](https://developers.google.com/web/tools/chrome-devtools/javascript/).  
 
 
 :::note
 
-For Tableau Desktop, see [Debugging Extensions in Tableau Desktop](./trex_debugging.html).
+For Tableau Desktop, see [Debugging Extensions in Tableau Desktop](./trex_debugging).
 
 :::
 
@@ -22,10 +22,15 @@ For Tableau Desktop, see [Debugging Extensions in Tableau Desktop](./trex_debugg
 ## Open the debugging tools in the browser
 
 1. Open the workbook containing the extension in Tableau Server or Tableau Cloud.
-   <br/>**Note:** If the extension fails to load and you are using `localhost` to serve your extension, you might encounter the mixed content security setting. To get past this issue, see [Load and view localhost content on sites that use secure connections]({{site.baseurl}}/docs/trex_debug_server.html#load-and-view-localhost-content-on-sites-that-use-secure-connections).
+   :::note
+   If the extension fails to load and you are using `localhost` to serve your extension, you might encounter the mixed content security setting. To get past this issue, see [Load and view localhost content on sites that use secure connections](#load-and-view-localhost-content-on-sites-that-use-secure-connections).
+
+   Make sure that the extension is on the Allow list (safe list) for Tableau Server or Tableau Cloud. See [Add extensions to the safe list and configure user prompts](https://help.tableau.com/current/online/en-us/dashboard_extensions_server.htm#add-extensions-to-the-safe-list-and-configure-user-prompts) (Tableau Cloud) or [Add extensions to the safe list and configure user prompts](https://help.tableau.com/current/server/en-us/dashboard_extensions_server.htm#add-extensions-to-the-safe-list-and-configure-user-prompts) (Tableau Server).
+
+   :::
 
 2. Open the debugging tools. <br/>
-The process varies by browser. If you are using Chrome, enter **CTRL** + **SHIFT** + **i** (Windows) or **COMMAND** + **OPTION** + **i** (MacOS). 
+The process varies by browser. If you are using Chrome, enter **CTRL** + **SHIFT** + **i** (Windows) or **COMMAND** + **OPTION** + **i** (MacOS).
 
 3. Locate the source code for your extension. <br/>
 For example, if you were using Chrome for debugging, you can open the Source pane. Under folders shown on the navigation pane, you will find one for the extension. For example, you might see something like `extension_frame_37 (filtering.html)`.
@@ -44,28 +49,32 @@ If you need to debug your extension, setting a breakpoint in your source code is
 You might see the permission dialog box prompt as the extension gets loaded.
 
 3. Step through your code or set other breakpoints. <br/>
-You can examine variables to see what information the extension has access to. For example, if you step or stop on the source line where you have access to the dashboard object, you can examine the values of the available resources in the dashboard. 
+You can examine variables to see what information the extension has access to. For example, if you step or stop on the source line where you have access to the dashboard or worksheet object, you can examine the values of the available resources. 
 
-    ```javascript/
+    ```javascript
     // To get filter info, first get the dashboard.
     const dashboard = tableau.extensions.dashboardContent.dashboard;
     ```
 
-4. Explore the dashboard extension namespace using the Console window. <br/> 
-For example, entering the following in the Console window (while you are paused in your extension code) will print out the names of all the worksheets in the dashboard.
+    Or worksheet, in the case of viz extensions.
 
+    ```javascript
+    // Get the worksheet.
+    const worksheet = tableau.extensions.worksheetContent.worksheet;
+    ```
+
+4. Explore the dashboard or viz extension namespace using the Console window. <br/>
+For example, entering the following in the Console window (while you are paused in your extension code) will print out the names of all the worksheets in the dashboard.
 
     ```javascript
 
     tableau.extensions.dashboardContent.dashboard.worksheets.forEach(function (worksheet){console.log(worksheet.name)})
 
     ```
+
     The following screenshot illustrates what your debugging session might look like if you use the Chrome DevTools. A breakpoint was set and the extension's JavaScript code is paused in the debugger.
 
-
     ![alt text](./assets/server_dbg_chrome.png "Chrome DevTools showing a the debugger paused on an extension breakpoint")
-
-
 
 ---
 
@@ -81,9 +90,9 @@ After you select the event breakpoint and refresh or reload the browser window, 
 3. In the debugger, click **Continue** to get to your JavaScript code.<br/>
 You might need to click **Continue** many times, as code execution stops for all the scripts in the dashboard. If you are just looking to debug general initialization problems and haven't tested your extension in Tableau Desktop, you might want to start there first.
 
-In Tableau Desktop, there is a debugging option you can set to pause the extension when it is loading. For more information, see [Debugging loading and initialization issues](./trex_debugging.html#debugging-loading-and-initialization-issues). 
+In Tableau Desktop, there is a debugging option you can set to pause the extension when it is loading. For more information, see [Debugging loading and initialization issues](./trex_debugging#debugging-loading-and-initialization-issues).
 
-If your extension fails to load at all on Tableau Server or Tableau Cloud, check the console window of the debugger to see if there is an error message of some kind. The console messages can give you clues about where to begin investigating when something goes wrong. If the error is caused by mixed content (trying to load an HTTP web page inside of a secure HTTPS server), see [Load and view localhost content on sites that use secure connections]({./trex_debug_server.html#load-and-view-localhost-content-on-sites-that-use-secure-connections).
+If your extension fails to load at all on Tableau Server or Tableau Cloud, check the console window of the debugger to see if there is an error message of some kind. The console messages can give you clues about where to begin investigating when something goes wrong. If the error is caused by mixed content (trying to load an HTTP web page inside of a secure HTTPS server), see [Load and view localhost content on sites that use secure connections](#load-and-view-localhost-content-on-sites-that-use-secure-connections).
 
 ---
 
@@ -101,7 +110,8 @@ To temporarily get around these safety settings for the session, you can click t
 
 During the session, anytime you refresh or reload the web page, you will see the extensions dialog box requesting permission to run. And in the debugger console, you might see a warning message about mixed content.
 
-```
+```cli
+
 Mixed Content: The page at 'https:/some_URLs#4' was loaded over HTTPS, but requested an insecure resource 'http://localhost:8765/Samples/Filtering/filtering.html'. This content should also be served over HTTPS.
 
 ```

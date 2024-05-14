@@ -1,15 +1,16 @@
 ---
 title: Viz Extension Samples
-layout: docs
+description: Information about using the Tableau viz extension samples
 ---
 
-The best way to learn how to build your own extensions is to look at the sample code. To examine the sample source files to see how Tableau viz extensions work, you can clone or download the [Extensions API](https://github.com/tableau/extensions-api-preview) SDK on GitHub and run the samples.
-- To download the Extensions API SDK, if you have not already done so, see [Get Started](trex_viz_getstarted.html).
+The best way to learn how to build your own extensions is to look at the sample code. To examine the sample source files to see how Tableau viz extensions work, you can clone or download the [Extensions API](https://github.com/tableau/extensions-api) SDK on GitHub and run the samples.
 
+- To download the Extensions API SDK, if you have not already done so, see [Get Started](./trex_viz_getstarted).
+
+<!--- Update the path with the viz extension sample on the release site -->
 - You can browse the sample code for the extensions in the [Samples](https://github.com/tableau/extensions-api-preview/tree/master/Samples?=target="_blank") folder on GitHub.
 
 ---
-
 
 
 The following instructions assume that you have already downloaded and extracted the files or have cloned the Extensions API SDK to your desktop.
@@ -19,7 +20,7 @@ The following instructions assume that you have already downloaded and extracted
 The viz extension samples are in the `Samples` folder.
 
 
--   **[ConnectedScatterplot](https://github.com/tableau/extensions-api-preview/tree/main/Samples/ConnectedScatterplot?=target="_blank")** 
+-   **[ConnectedScatterplot](https://github.com/tableau/extensions-api-preview/tree/main/Samples/ConnectedScatterplot?=target="_blank")**
      
     Shows how to create a viz extension. 
 
@@ -49,7 +50,7 @@ The viz extension samples are in the `Samples` folder.
 
 -   **[VizImage](https://github.com/tableau/extensions-api-preview/tree/main/Samples/VizImage?=target="_blank")**
 
-    Shows how you can use Tableau Viz to add visualizations to your extensions. This sample demonstrates the effects of different mark types and color palettes. For more information about Tableau Viz, see [Add Tableau Viz to Your Extensions]({{site.baseurl}}/docs/trex_tableau_viz.html).
+    Shows how you can use Tableau Viz to add visualizations to your extensions. This sample demonstrates the effects of different mark types and color palettes. For more information about Tableau Viz, see [Add Tableau Viz to Your Extensions](../trex_tableau_viz).
 
 
 ---
@@ -58,16 +59,17 @@ The viz extension samples are in the `Samples` folder.
 To use the extension samples, you need to start up a web server on your computer to host the HTML pages. If you downloaded or cloned the Extensions API repository, you can start the web service in the root directory of the repository on your computer. These commands start the Node.js basic service `http-server`.
 
 1. Go to the `extensions-api-preview` folder.
-2. To install the web server components, run the following command:
-   ```
+1. To install the web server components, run the following command:
+
+   ```cli
    npm install
    ```
-3. To start the web server, run the following command:
-   ```
+
+1. To start the web server, run the following command:
+
+   ```cli
    npm start
    ```
-
-
 
 ### Instructions for starting a web server on a different port
 
@@ -77,24 +79,28 @@ From the `extensions-api-preview` folder, you can start the `http-server` using 
 
 To install the `http-server`on your computer globally and to also start the server: 
 
-```
+```cli
 npm install http-server -g && http-server -p PORT
 ```
+
 If you have already installed `http-server`, you can start the server directly:
 
-```
+```cli
 http-server -p PORT
-``` 
+```
+
 The port you use for the web server also has to match the port specified in the manifest file (`.trex`) for the server.
 
-```
+```html
+
 <source-location>
       <url>http://localhost:PORT/Samples/Parameters/parameters.html</url>
 </source-location>
 
 ```
 
----  
+---
+
 ### Use the extensions in the samples folder
 
 After you start the web server to host the sample extensions, you can try the extensions in Tableau.
