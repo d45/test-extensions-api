@@ -14,7 +14,6 @@ const sidebars = {
         'vizext/trex_viz_getstarted',
         'vizext/trex_viz_overview',
         'vizext/trex_viz_create',
-        'vizext/trex_viz_debug_server',
         'vizext/trex_viz_manifest',
         'vizext/trex_viz_examples',
       ],
@@ -27,7 +26,6 @@ const sidebars = {
         'dashext/trex_getstarted',
         'dashext/trex_create',
         'dashext/trex_overview',
-        'dashext/trex_debug_server', 
         'dashext/trex_manifest',
         'dashext/trex_examples', 
       ],
@@ -100,9 +98,13 @@ const sidebars = {
       items: [
       { type: 'link', label: "Samples", href: "https://github.com/tableau/extensions-api-preview/tree/main/Samples" },
       { type: 'link', label: "API Reference",  href: 'pathname:///api' },
-      'trex_tableau_viz_ref',
-      'trex_tableau_viz_ref_v1',
-      'trex_tableau_viz_ref_v2',
+      {
+        type: 'category',
+        label: 'Tableau Viz Reference',
+        items: [ 'trex_tableau_viz_ref', 'trex_tableau_viz_ref_v1', 'trex_tableau_viz_ref_v2', ],
+      },
+      'trex_release-notes',
+      'trex_known_issues',
       ],
     }, 
 

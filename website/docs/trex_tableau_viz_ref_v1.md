@@ -3,10 +3,10 @@ title: Tableau Viz v1 inputSpec
 description: Input specification for creating Tableau Viz v1 images in dashboard extensions
 --- 
 
-The `createVizImageAsync` method takes a single argument, the `inputSpec`, a JavaScript object, and returns the SVG description of that image. 
+The `createVizImageAsync` method takes a single argument, the `inputSpec`, a JavaScript object, and returns the SVG description of that image.
 
 Note that you can use the Tableau Viz v1 `inputSpec` with Tableau 2021.3 (and later). 
-To create combination charts and dual-axis visualizations, you need to use version 2 of the `inputSpec`, available in Tableau 2022.3 and later. See the [Tableau Viz v2 inputSpec](./trex_tableau_viz_ref_v2.html).
+To create combination charts and dual-axis visualizations, you need to use version 2 of the `inputSpec`, available in Tableau 2022.3 and later. See the [Tableau Viz v2 inputSpec](./trex_tableau_viz_ref_v2).
 
 
 ## The createVizImageAsync method
@@ -20,7 +20,7 @@ createVizImageAsync( inputSpec:  *object* ): Promise<string>
 ```
 
 This method takes a single argument, the `inputSpec`, a JavaScript object, and returns the SVG description of that image. To call this method, you first initialize the Dashboard Extensions API (`tableau.extensions.initialize()`). You then create the `inputSpec` object that defines your graphic.
-For more information about the method, see [`tableau.extensions.createVizImageAsync`](pathname:///api/interfaces/extensions.html#createvizimageasync) in the Dashboard Extensions API reference.
+For more information about the method, see [`tableau.extensions.createVizImageAsync`](pathname:///api/interfaces/extensions#createvizimageasync) in the Dashboard Extensions API reference.
 
 
 ## Specification for `inputSpec` (version 1) object
@@ -165,7 +165,6 @@ mark: tableau.MarkType.Line,
   }
 ```
 
-
 #### encoding: `size`
 
 Specifies the size encoding of the mark. The `size` property corresponds to the Size button on the Marks card. For continuous fields, you can set the bar mark to either manual or fixed size. You can also set the mark’s alignment.
@@ -183,7 +182,7 @@ Specifies the size encoding of the mark. The `size` property corresponds to the 
 |`tableau.VizImageSizeSettingType.Fixed` | Mark size is fixed. When `Fixed` is selected, you can set the `alignment` to `tableau.VizImageSizeSettingAlignmentType.Right`, `tableau.VizImageSizeSettingAlignmentType.Left`, or `tableau.VizImageSizeSettingAlignmentType.Center`. You can set the `width_in_axis_units` to a fixed number of units (floating point values accepted). |
 |`tableau.VizImageSizeSettingType.Manual` | Specifies that the mark size type is manual. When this is selected, set the `marksize` value (from 0 to 2, floating point values accepted). |
 
-Example of fixed sized type: 
+Example of fixed sized type:
 
 ```javascript
 
@@ -203,7 +202,6 @@ encoding: {
   }
 ```
 
-
 #### encoding: `sort`
 
 Specifies the sort order for a field (continuous or discrete). Supports sorting the field by ascending or descending values (`VizImageSortDirectionType.Ascending`, `VizImageSortDirectionType.Descending`), based on the `sortby` criteria you provide.
@@ -211,8 +209,6 @@ Specifies the sort order for a field (continuous or discrete). Supports sorting 
 ```javascript
   sort: { field: "Category", sortby: "Weather", direction: tableau.VizImageSortDirectionType.Ascending }
   ```
-
-
 
 #### encoding: `color`
 
@@ -240,7 +236,6 @@ encoding: {
 }
 
 ```
-
 
 | Continuous colors palettes |  Palette name |
 |:--- |:--- |
@@ -280,7 +275,6 @@ You can set the color palette to a custom diverging or custom sequential color p
 |:--- |:--- |
 |`tableau.VizImagePaletteType.CustomDiverging` | Defines a custom diverging palette. Specify the `start` value and an `end` value, each as a hexadecimal value. |
 | `tableau.VizImagePaletteType.CustomSequential` | Defines a custom sequential palette. Specify the `end` value as a hexadecimal value. |
-
 
 For example, you could set a custom palette as shown in the following examples:
 

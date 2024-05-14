@@ -45,6 +45,6 @@ Specifications about spacing have been detailed in **[Controls and UI Patterns](
 
 Here are some links to specific parts of your extension that you may need spacing guidance on:
 
-* [**Dialogs** (Controls and UI Patterns)](../Interaction_Guidelines/ux_controls_ui_patterns.html#dialogs)
-* [**Configuration Dialog** (Branding your Extension)](../Style_Guidelines/ux_branding.html#configuration-dialog)
-* [**Extension Container** (Branding your Extension)](../Style_Guidelines/ux_branding.html#extension-container)
+* [**Dialogs** (Controls and UI Patterns)](../Interaction_Guidelines/ux_controls_ui_patterns#dialogs)
+* [**Configuration Dialog** (Branding your Extension)](../Style_Guidelines/ux_branding#configuration-dialog)
+* [**Extension Container** (Branding your Extension)](../Style_Guidelines/ux_branding#extension-container)

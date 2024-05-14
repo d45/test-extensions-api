@@ -141,7 +141,7 @@ For Tableau Viz version 2, an `inputSpec` supports combination charts, multiple 
 
 ```
 
-For more information about the `inputSpec` for version 1 and version 2, see [Tableau Viz Reference]({{site.baseurl}}/docs/trex_tableau_viz_ref.html).
+For more information about the `inputSpec` for version 1 and version 2, see [Tableau Viz Reference](./trex_tableau_viz_ref).
 
 ---
 
@@ -156,7 +156,6 @@ After you create the `inputSpec` you pass it as an argument to the `createVizIma
   
   ```
   
-
 ## Display the SVG image in the dashboard extension
 
 The asynchronous method returns an SVG image as the promise. Here is one way of taking that SVG and embedding it as a an element in your extension web page. In this example, the `svg` is converted to a JavaScript `Blob`, and the `Blob` is used as the image data source in the hosting dashboard extensions page.
@@ -195,9 +194,9 @@ The following shows what a version 2 `inputSpec` looks like when rendered by the
 
 Now that you have seen the basic steps for adding a Tableau Viz to a dashboard extension, you can try adding Tableau Viz to your own dashboard extensions, or to one of the samples.
 
-* For information about the Tableau Viz version 1 and version 2 `inputSpec` and all the options for specifying the visualization, see [Tableau Viz Reference](./trex_tableau_viz_ref.html).
+* For information about the Tableau Viz version 1 and version 2 `inputSpec` and all the options for specifying the visualization, see [Tableau Viz Reference](./trex_tableau_viz_ref).
 
-* Review the [`tableau.extensions.createVizImageAsync`](pathname:///api/interfaces/extensions.html#createvizimageasync) method for information about the API.
+* Review the [`tableau.extensions.createVizImageAsync`](pathname:///api/interfaces/extensions#createvizimageasync) method for information about the API.
 
 * Check out the [Tableau Viz Sample - VizImage](https://github.com/tableau/extensions-api/tree/main/Samples/VizImage) and see how it works. Examine the source code to find out ways you can incorporate Tableau Viz into your own dashboard extensions.
 
@@ -205,20 +204,20 @@ Now that you have seen the basic steps for adding a Tableau Viz to a dashboard e
 
 ## Troubleshoot Tableau Viz images in dashboard extensions
 
-You can use the same tools that you use to debug dashboard extensions to debug problems that occur when you use Tableau Viz to create images. For information about debugging your extension, see [Debug Extensions in Tableau Desktop](https://tableau.github.io/extensions-api/docs/trex_debugging.html) and [Debug Extensions in Tableau Server and Tableau Cloud](https://tableau.github.io/extensions-api/docs/trex_debug_server.html).
+You can use the same tools that you use to debug dashboard extensions to debug problems that occur when you use Tableau Viz to create images. For information about debugging your extension, see [Debug Extensions in Tableau Desktop](./trex_debugging) and [Debug Extensions in Tableau Server and Tableau Cloud](./trex_debug_server).
 
 
 ### Tableau Viz Error Messages
 
 The following is a list of common error messages that you might encounter and includes steps for fixing those errors. The error messages appear in the Console window when you use the Chrome or Chromium debugging tools.
 
-For specific issues with the current release, see [Tableau Viz - Known Issues](./trex_known_issues.html#tableau-viz---known-issues).
+For specific issues with the current release, see [Tableau Viz - Known Issues](./trex_known_issues#tableau-viz---known-issues).
 
 #### Invalid Palette Name
 
 `Error: internal-error: {"vizapiErrorMsg":"Invalid Palette Name"}`
 
-Be sure that you use one of the palette names listed for the `color` key under encoding in the `inputSpec`. See [Encoding](./trex_tableau_viz_ref.html#encoding). Note that the palette must be supported by the version of Tableau that you are using, and that the palette colors are subject to change. In addition, there are some palette colors can only be used for continuous or discrete fields, but not for both.
+Be sure that you use one of the palette names listed for the `color` key under encoding in the `inputSpec`. See [Encoding](./trex_tableau_viz_ref_v1#encoding) (v1) or [Encoding](./trex_tableau_viz_ref_v1#encoding)(v2). Note that the palette must be supported by the version of Tableau that you are using, and that the palette colors are subject to change. In addition, there are some palette colors can only be used for continuous or discrete fields, but not for both.
 
 
 #### Encoding column (or row) has invalid type
@@ -230,5 +229,4 @@ When you encode the fields in the `inputSpec`, you need to make sure that the di
 
 #### Invalid JSON
 
-The `inputSpec` is a JavaScript object that Tableau converts to JSON for processing. The `inputSpec` needs to be in the correct format and must include all required elements. You must encode columns and fields. For the list of required elements, see [Tableau Viz Reference](./trex_tableau_viz_ref.html).
-
+The `inputSpec` is a JavaScript object that Tableau converts to JSON for processing. The `inputSpec` needs to be in the correct format and must include all required elements. You must encode columns and fields. For the list of required elements, see [Tableau Viz Reference](./trex_tableau_viz_ref).

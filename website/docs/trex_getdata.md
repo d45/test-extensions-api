@@ -1,9 +1,9 @@
 ---
-title: Get Data from the Dashboard
+title: Getting Data from the Workbook
 description: How to access data in the workbook
 ---
 
-The Tableau Extensions API provides methods that you can use to access the data in a workbook. The data you can access includes the summary or aggregated data, and also the underlying data (or full data). If your extension needs to access the full data, there are security implications and your extension needs to declare its intent, so that users of your extension can choose to allow or deny the extension access. See  [Accessing Underlying Data](./trex_data_access.html) for more information.
+The Tableau Extensions API provides methods that you can use to access the data in a workbook. The data you can access includes the summary or aggregated data, and also the underlying data (or full data). If your extension needs to access the full data, there are security implications and your extension needs to declare its intent, so that users of your extension can choose to allow or deny the extension access. See  [Accessing Underlying Data](./trex_data_access) for more information.
 
 ::::note
 
@@ -15,12 +15,12 @@ For information about the data model, see [The Tableau Data Model](https://help.
 
 ---
 
-# Get data from a worksheet
+## Get data from a worksheet
 
 The Extensions API provides several methods for accessing data from a dashboard. The method you use depends in part upon how you want to use the data, and on the version of Tableau and the Extensions API library you are using. When you have the worksheet object, you can get the summary data (aggregated data) or the full data (underlying data) directly from the worksheet, using these methods:  
 
-| Method | Tableau Version | Extensions API Library | Status |
-|:------ | :---------------| :--------------------- |
+| Method  | Tableau Version | Extensions API Library | Status |
+| :------ | :---------------| :--------------------- | :------|
 | `Worksheet.getSummaryDataReaderAsync()` | Tableau 2022.4 and later |  version 1.10 and later | Current |
 | `Worksheet.getSummaryDataAsync()` | Tableau 2018.2 and later | version 1.1 and later | Deprecated |
 | `Worksheet.getUnderlyingDataAsync()` | Tableau 2018.2 to 2020.1 | version 1.1 to 1.3 | Deprecated |
@@ -65,8 +65,7 @@ The first step for accessing data of any kind is to get the worksheet object (or
 
 ```
 
-After you have a worksheet object, you can call one of the methods to access the data for that worksheet. For summary data, or the data from the selected or highlighted marks, the steps are straight forward. If you want access the underlying data (or full data), there are additional steps and considerations. See [Accessing Underlying Data]({{site.baseurl}}/docs/trex_data_access.html).
-
+After you have a worksheet object, you can call one of the methods to access the data for that worksheet. For summary data, or the data from the selected or highlighted marks, the steps are straight forward. If you want access the underlying data (or full data), there are additional steps and considerations. See [Accessing Underlying Data](./trex_data_access).
 
 ## Get summary data from a worksheet
 
@@ -122,7 +121,7 @@ Prior to Tableau 2022.4 and the Dashboard Extensions API library v1.10, you woul
 
 ## Get full data from a worksheet
 
-If your extension uses one of the functions that can access full data, you need to add an element to the manifest file (`.trex`) that declares that the extension requires `full data` permission. If the manifest file does not have this element, the extension can run, but the method to access full data will fail. See [Add permissions to access full data to manifest file](./trex_data_access.html#add-permissions-to-access-full-data-to-manifest-file).
+If your extension uses one of the functions that can access full data, you need to add an element to the manifest file (`.trex`) that declares that the extension requires `full data` permission. If the manifest file does not have this element, the extension can run, but the method to access full data will fail. See [Add permissions to access full data to manifest file](./trex_data_access#add-permissions-to-access-full-data-to-manifest-file).
 
 Note whoever uses your extension must have the appropriate download permissions (Download Full Data) so that extension can run.
 
@@ -175,7 +174,6 @@ The following example returns data for the first logical table that is used by a
 ```
 
 You can specify the number of rows of data to return by setting `GetUnderlyingDataOptions.maxRows` property. If unspecified (`maxRows == '0'`), the call to `getUnderlyingTableDataAsync` requests all rows in the logical table. Note that the maximum number of rows returned from the `getUnderlyingTableDataAsync` method is limited to 10,000 rows. You can use the `DataTable` property, `isTotalRowCountLimited`, to test whether there is more data. A value of true indicates that the calling function requested more rows than the limit (10,000) and the underlying data source contains more rows than can be returned. If the data contains more than 10,000 rows, use `getUnderlyingTableDataReaderAsync` method instead.
-
 
 #### 2b. Get data from the logical table(s) (more than 10,000 rows)
 
@@ -248,15 +246,15 @@ tableau.extensions.dashboardContent.dashboard.worksheets.find(w => w.name === "S
 
 ---
 
-# Get data from a data source 
+## Get data from a data source
 
 You can also get the underlying data from the data sources for the worksheet. To do that, you must acquire the data sources for the worksheet with a call to the `getDataSourcesAsync()` method, which returns an array of the primary and all the secondary data sources of a worksheet. Once you have the data source object, you can access the underlying data and access information about the data source, such as the names of tables and fields and information about the connection.
 
-Just like worksheet methods that access full data, the following methods for the data source also require that your extension specifies `full data` permissions in the `trex` file. See [Add permissions to access full data to manifest file](./trex_data_access.html#add-permissions-to-access-full-data-to-manifest-file).
+Just like worksheet methods that access full data, the following methods for the data source also require that your extension specifies `full data` permissions in the `trex` file. See [Add permissions to access full data to manifest file](./trex_data_access#add-permissions-to-access-full-data-to-manifest-file).
 
 
 | Method | Tableau Version | Extensions API Library | Status |
-|:------ | :---------------| :--------------------- |
+|:------ | :---------------| :--------------------- |:-------|
 | `Datasource.getConnectionSummariesAsync()`| Tableau 2018.2 and later | version 1.1 and later | Current |
 | `Datasource.getDataSourcesAsync()` | Tableau 2018.2 and later | version 1.1 and later | Current |
 | `Datasource.getActiveTablesAsync()` | Tableau 2018.2 to 2020.1 | version 1.1 to 1.3 |  Deprecated |
@@ -264,7 +262,6 @@ Just like worksheet methods that access full data, the following methods for the
 | `Datasource.getLogicalTablesAsync()` | Tableau 2018.2 and later | version 1.4 and later | Current |
 | `Datasource.getLogicalTableDataAsync()` | Tableau 2018.2 and later | version 1.4 and later | Current |
 | `Datasource.getLogicalTableDataReaderAsync()` | Tableau 2022.4 and later | version 1.10 and later | Current |
-
 
 
 ## Get the data sources from a worksheet
@@ -280,7 +277,7 @@ tableau.extensions.dashboardContent.dashboard.worksheets.find(w => w.name === "S
 
 ```
 
-## Get full data from a worksheet using the v1.4 library (and later)
+### Get full data from a worksheet using the v1.4 library (and later)
 
 After you have the data source object, you can query the data source for the underlying data. Starting in Tableau 2020.2 and later, the underlying data could include multiple logical tables. Before accessing the data you need to identify the logical table (or tables) of the data source you want data from. In previous versions of Tableau (2020.1 and earlier), logical tables did not exist. When you use the `Datasource.getLogicalTablesAsync()` in Tableau 2020.1 and earlier, the method returns a single table.
 
@@ -379,7 +376,7 @@ try {
 
 ```
 
-## Deprecated: Get data from a data source using the v1.3 library (and earlier)
+### Deprecated: Get data from a data source using the v1.3 library (and earlier)
 
 If you were using 1.3 version of the Extensions API library (or earlier), you had to use the `getUnderlyingDataAsync` method to get the underlying data from a data source in Tableau 2020.1 and earlier. This method has been deprecated, but it shown here for completeness.
 
@@ -398,7 +395,7 @@ tableau.extensions.dashboardContent.dashboard.worksheets.find(w => w.name === "S
 
 ---
 
-# Compatibility: methods for accessing underlying data
+## Compatibility: methods for accessing underlying data
 
 To support the data model that was introduced in Tableau 2020.2, where a data source can have logical tables, the Tableau Dashboard Extensions API provides new methods for getting data. The new methods are available starting with version 1.4 of the Extensions API library. Starting with version 1.10 of the library, there are new methods that provide pagination using a `DataTableReader`.  The following table shows the compatibility between the methods and the different versions of the Extensions API library and Tableau.
 
@@ -413,7 +410,7 @@ If you have an existing Dashboard Extension that accesses underlying data, and y
 
 ---
 
-# When there is more data than can be returned
+## When there is more data than can be returned
 
 Some data sources can be very large and could contain thousands and thousands of rows. To minimize the impact of requests for data on Tableau performance, the `getUnderlyingDataAsync()`, `Worksheet.getUnderlyingTableDataAsync()`, and `Datasource.getLogicalTableDataAsync` methods are currently limited to returning 10,000 rows. If the method can't return the full number of rows in your data, the `DataTable` property `isTotalRowCountLimited` is set to TRUE. You can use this property to test whether there is more data than can be returned.
 
@@ -446,7 +443,7 @@ The following table illustrates what happens to calls to `getUnderlyingDataAsync
 
 ---
 
-# Handle full data access and permission errors
+## Handle full data access and permission errors
 
 When an extension needs full data access and the user does not have full data permission on the workbook, Tableau currently allows the extension to run, but Tableau will call the promise failure function if the extension calls `getUnderlyingData()`, `Worksheet.getUnderlyingTableDataAsync()`, and `Datasource.getLogicalTableDataAsync()`. This is shown in the following example.
 

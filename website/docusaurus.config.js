@@ -31,8 +31,10 @@ const getConfig = async () => {
     noIndex: isUpcomingVersion || isInofficial,
 
     // We want all issues to be reported as build errors
-    onBrokenLinks: 'warn',
-    onBrokenMarkdownLinks: 'warn',
+    onBrokenLinks: 'throw',
+    onBrokenMarkdownLinks: 'throw',
+    onBrokenAnchors: 'throw',
+    onDuplicateRoutes: 'warn',
 
     // Even if you don't use internalization, you can use this field to set useful
     // metadata like html lang. For example, if your site is Chinese, you may want
@@ -88,7 +90,20 @@ const getConfig = async () => {
               to: '/docs/ux_design',
               position: 'left',
               label: 'Design Guidelines',
-            },  
+            },
+            {
+              label: 'Tutorial',
+              href:  'https://github.com/tableau/extensions-api/blob/main/Tutorial/readme.md',
+            },
+            {
+              to: '/docs/trex_release-notes',
+              position: 'left',
+              label: 'Release Notes',
+            },
+            {
+              label: 'Community Extensions',
+              href: 'https://tableau.github.io/extensions-api/community/',
+            }
          /*   {
               type: 'docSidebar',
               position: 'left',
@@ -133,6 +148,11 @@ const getConfig = async () => {
                 label: 'UX Design Guide',
                 to: '/docs/ux_design',
                 },
+                {
+                  label: 'Tutorial',
+                  href: 'https://github.com/tableau/extensions-api/blob/main/Tutorial/readme.md',
+                },
+
               ],
             },
             {
@@ -145,6 +165,10 @@ const getConfig = async () => {
                 {
                   label: 'Slack',
                   href: 'https://join.slack.com/t/tableau-datadev/shared_invite/zt-1q4rrimsh-lHHKzrhid1MR4aMOkrnAFQ',
+                },
+                {
+                  label: 'Community Extensions',
+                  href: 'https://tableau.github.io/extensions-api/community/',
                 },
               ],
             },
