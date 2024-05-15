@@ -92,13 +92,13 @@ const getConfig = async () => {
               label: 'Design Guidelines',
             },
             {
-              label: 'Tutorial',
-              href:  'https://github.com/tableau/extensions-api/blob/main/Tutorial/readme.md',
-            },
-            {
               to: '/docs/trex_release-notes',
               position: 'left',
               label: 'Release Notes',
+            },
+            {
+              label: 'Tutorial',
+              href:  'https://github.com/tableau/extensions-api/blob/main/Tutorial/readme.md',
             },
             {
               label: 'Community Extensions',

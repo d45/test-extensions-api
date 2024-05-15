@@ -36,7 +36,6 @@ You can avoid these errors if you specify the `subjectAlternativeName` (SAN) in 
 
 For more information, see [Google Chromium Enterprise Known Issues - Error "Subject Alternative Name Missing"](https://support.google.com/chrome/a/answer/9813310?hl=en#zippy=%2Cerror-subject-alternative-name-missing-or-neterr-cert-common-name-invalid-or-your-connection-is-not-private) and the following discussion on Stack Overflow: [Invalid self signed SSL cert - “Subject Alternative Name Missing” on StackOverflow](https://stackoverflow.com/questions/43665243/invalid-self-signed-ssl-cert-subject-alternative-name-missing).
 
-
 ### Time zone not persisted when updating date parameter
 
 When you update a date or date-time parameter using `changeValueAsync()`, the time zone information is not kept. The date/time is still correct, however, it is just that the data/time is converted to UTC.
