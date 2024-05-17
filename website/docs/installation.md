@@ -48,7 +48,7 @@ You can get the Tableau Extensions API SDK in two ways. Clone the repository if 
 
 HTTPS
 <CodeBlock language="js">
-git clone https://github.com/tableau/extensions-api-preview.git
+git clone https://github.com/tableau/extensions-api.git
 </CodeBlock>
 
 ```mdx-code-block
@@ -60,7 +60,7 @@ git clone https://github.com/tableau/extensions-api-preview.git
 
 SSH
 
-`git clone git@github.com:tableau/extensions-api-preview.git`
+`git clone git@github.com:tableau/extensions-api.git`
 
 ```mdx-code-block
 </TabItem>

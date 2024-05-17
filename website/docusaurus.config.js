@@ -215,7 +215,20 @@ const getConfig = async () => {
             anonymizeIP: true,
           },
         ],
-          '@cmfcmf/docusaurus-search-local',
+      //    '@cmfcmf/docusaurus-search-local',
+      /*  [
+          require.resolve("@easyops-cn/docusaurus-search-local"),
+         // /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} 
+          ({
+            // ... Your options.
+            // `hashed` is recommended as long-term-cache of index file is possible.
+            hashed: true,
+            // For Docs using Chinese, The `language` is recommended to set to:
+            // ```
+            // language: ["en", "zh"],
+            // ```
+          }),  
+          ], */
       ],
 
       markdown: {
@@ -223,7 +236,27 @@ const getConfig = async () => {
         mermaid: true,
 
       },
-      themes: ['@docusaurus/theme-mermaid'],
+      themes: [
+        
+        '@docusaurus/theme-mermaid',
+        [
+        require.resolve("@easyops-cn/docusaurus-search-local"),
+        /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+        ({
+          // ... Your options.
+          // `hashed` is recommended as long-term-cache of index file is possible.
+          hashed: true,
+          indexDocs: true,
+          indexBlog: false,
+          forceIgnoreNoIndex: true,
+          highlightSearchTermsOnTargetPage: true,
+          // For Docs using Chinese, The `language` is recommended to set to:
+          // ```
+          // language: ["en", "zh"],
+          // ```
+        }),
+        ],
+      ]
   };
 }
 
