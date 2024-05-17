@@ -3,9 +3,67 @@ title: Release Notes for the Tableau Extensions API
 description: What's new for each release of the Tableau Extensions API
 --- 
 
-[Previous Releases](#previous-releases)
+[Previous Releases](#previous-releases) <br/>
+[Known Issues](./trex_known_issues)
 
-----
+---
+
+
+### Tableau Extensions API version 1.12.0
+
+*May 2024*
+
+* Tableau Dashboard Extensions API library: `tableau.extensions.1.12.0.js` <br />(download or clone the Extensions API repository on [GitHub](https://github.com/tableau/extensions-api)..) <br/>
+
+* Certain features in this release are only available in Tableau 2024.2 or later. Download [Tableau Desktop](https://www.tableau.com/support/releases) or [Tableau Server](https://www.tableau.com/support/releases/server).
+
+* To preview new features and test your extension with the latest version of Tableau in the Developer Sandbox, join the [Tableau Developer Program](http://www.tableau.com/developer). and request your own Tableau Cloud developer site.
+
+What's new in this release:
+
+* Support for Viz Extensions. Viz Extensions is a new feature that allows developers to create new viz types that Tableau users can access through the worksheet Marks card. See [Getting Started with Viz Extensions](./vizext/trex_viz_getstarted).
+
+* Updated the [`Worksheet.selectTuplesAsync`](pathname:///api/interfaces/worksheet.html#selecttuplesasync) method to now support multiple tuple values. This means you can enable multi-selection scenarios. For example, the viz extension can support mark selection for rectangular, lasso, or other shaped multi-mark selections. You can use this method for marks or zones that represent multiple values.
+
+* Added [Keyboard Accessible](https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation.html) navigation methods.
+  * You can use the [`Worksheet.getTooltipTextAsync`](pathname:///api/interfaces/worksheet.html#gettooltiptextasync) method to grab the data of the navigated tuple to read out to a screen reader.
+
+  * Use the [`Worksheet.leaveMarkNavigationAsync`](pathname:///api/interfaces/worksheet.html#leavemarknavigationasync) method to escape focus back over to Tableau when you're done with mark navigation.
+
+* (Viz Extensions) You can now specify the encoding icons used on the Marks card and provide for localization. You set these options in the `.trex` manifest file. See [Add encoding to the viz manifest](./vizext/trex_viz_manifest#add-encoding-in-the-viz-manifest).
+
+* (Viz Extensions) Added support for a **Format Extension** button on the Marks card. You can use the Format Extension button to open a configuration popup window to let your users customize your viz extension. You create the button by adding a `<context-menu>` element to your `.trex` manifest file and then creating a `configure()` callback function. For more information, see [Add a Configuration Popup Dialog](./trex_configure).
+
+  ```xml
+ 
+  <context-menu>
+      <configure-context-menu-item />
+  </context-menu>
+
+  ```
+
+* Added support for interactivity in viz extensions. You can add actions and tooltips based on marks selection or hover over interactions. This release includes two new `worksheet` methods.
+
+    * Use the [`Worksheet.selectTuplesAsync`](pathname:///api/interfaces/worksheet.html#selecttuplesasync) method to display the Tableau tooltip for the selected marks, or to take some other action based upon the marks selection.
+
+    * Use the [`Worksheet.hoverTupleAsync`](pathname:///api/interfaces/worksheet.html#hovertupleasync) method to display a tooltip for the marks currently hovered over.
+
+    For an example of how you can use these methods, see the [Sankey](https://github.com/tableau/extensions-api-preview/tree/main/Samples/Sankey?=target="_blank") viz extension sample.
+
+Also in this release:
+
+* Added `Field.ColumnType`.
+
+* Fixed a bug to allow a Field to have `datatype = DataType.Spatial`.
+
+* Added an attribute `isGeospatial` to `Field`.
+
+---
+
+## Previous Releases
+
+---
+
 ### Tableau Dashboard Extensions API version 1.11.0
 
 *April 2024*
@@ -34,15 +92,7 @@ About this release:
 
     Sign up to test Tableau Viz Extensions in the [Tableau Beta Preview](https://prerelease.tableau.com/welcome/), as part of the web authoring experience when you register for a Tableau Cloud Beta Site.
 
-----
-See also: [Known Issues](./trex_known_issues)
-
-----
-
-## Previous Releases
-
-
-----
+---
 
 ### Tableau Dashboard Extensions API version 1.10.0
 
@@ -72,7 +122,7 @@ For more information, see [Get Data from the View](./trex_getdata).
 
 * Adds support for annotating marks with [Worksheet.annotateMarkAsync](pathname:///api/interfaces/worksheet.html#annotatemarkasync), [Worksheet.getAnnotationsAsync](pathname:///api/interfaces/worksheet.html#getannotationsasync), and [Worksheet.removeAnnotationAsync](pathname:///api/interfaces/worksheet.html#removeannotationasync). See the code sample, [Annotation](https://github.com/tableau/extensions-api/tree/dev/Samples/Annotation) (on GitHub).
 
-----
+---
 
 ### Tableau Dashboard Extensions API version 1.9.0
 
@@ -80,9 +130,9 @@ For more information, see [Get Data from the View](./trex_getdata).
 
 * Tableau Dashboard Extensions API library: `tableau.extensions.1.9.0.js` <br />(download or clone the Extensions API repository on [GitHub](https://github.com/tableau/extensions-api)..) <br/>
 
-* Download [Tableau Desktop](https://www.tableau.com/support/releases). or [Tableau Server](https://www.tableau.com/support/releases/server)..
+* Download [Tableau Desktop](https://www.tableau.com/support/releases) or [Tableau Server](https://www.tableau.com/support/releases/server).
 
-* To preview new features and test your extension with the latest version of Tableau in the Developer Sandbox, join the [Tableau Developer Program](http://www.tableau.com/developer). and request your own Tableau Cloud developer site.
+* To preview new features and test your extension with the latest version of Tableau in the Developer Sandbox, join the [Tableau Developer Program](http://www.tableau.com/developer) and request your own Tableau Cloud developer site.
 
 About this release:
 
