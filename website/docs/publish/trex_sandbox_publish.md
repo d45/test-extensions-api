@@ -1,6 +1,6 @@
 ---
 title: Publish Sandboxed Extensions
-description: publish Sandboxed extensions
+description: Publish Sandboxed extensions
 ---
 
 Sandboxed Extensions are Tableau dashboard extensions that are not permitted to make external network requests. Sandboxed Extensions are hosted by Tableau and run inside an environment that prevents communication with anything except the Tableau hosting server. Sandboxed Extensions are supported in Tableau 2019.4 and later.

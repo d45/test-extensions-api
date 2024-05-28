@@ -1,6 +1,6 @@
 ---
 title: Show and Hide Objects in the Dashboard
-description: show or hide the dashboard extension in the dashboard
+description: Show or hide the dashboard extension in the dashboard
 ---
 
 Starting with Tableau 2019.1, you can use the `ZoneVisibilityType` enum and `setZoneVisibilityAsync` method to control whether objects in a dashboard are visible or hidden. You can use this feature to create tooltip-like popup dialog boxes, or to create animated slide-show effects by toggling the visibility of the objects in the dashboard.

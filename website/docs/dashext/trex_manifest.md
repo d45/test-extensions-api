@@ -1,6 +1,6 @@
 ---
 title: Tableau Extension Manifest File
-layout: docs
+description: Components of the dashboard extension manifest file
 ---
 
 The extension manifest file (`.trex`) contains metadata for the extension and is used for registration.
