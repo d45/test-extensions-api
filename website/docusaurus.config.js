@@ -56,6 +56,7 @@ const getConfig = async () => {
             editUrl:
               'https://github.dev/tableau/extensions-api/blob/main/website/',
             remarkPlugins: [remarkDefList],
+            sidebarCollapsed: true,
           },
           theme: {
             customCss: require.resolve('./src/css/custom.css'),

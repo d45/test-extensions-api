@@ -32,7 +32,7 @@ What's new in this release:
 
 * (Viz Extensions) You can now specify the encoding icons used on the Marks card and provide for localization. You set these options in the `.trex` manifest file. See [Add encoding to the viz manifest](./vizext/trex_viz_manifest#add-encoding-in-the-viz-manifest).
 
-* (Viz Extensions) Added support for a **Format Extension** button on the Marks card. You can use the Format Extension button to open a configuration popup window to let your users customize your viz extension. You create the button by adding a `<context-menu>` element to your `.trex` manifest file and then creating a `configure()` callback function. For more information, see [Add a Configuration Popup Dialog](./trex_configure).
+* (Viz Extensions) Added support for a **Format Extension** button on the Marks card. You can use the Format Extension button to open a configuration popup window to let your users customize your viz extension. You create the button by adding a `<context-menu>` element to your `.trex` manifest file and then creating a `configure()` callback function. For more information, see [Add a Configuration Popup Dialog](./core/trex_configure).
 
   ```xml
  
@@ -106,7 +106,7 @@ About this release:
 
 About this release:
 
-* Updates for Tableau Viz, an easy way for you to add visualizations to your dashboard extensions using a declarative description. This release includes support for combination charts, charts with multiple mark types in the same visualization. Tableau Viz has a new input specification that support these new visualizations, see the [Tableau Viz v2 inputSpec](./trex_tableau_viz_ref_v2). For information about using Tableau Viz in your extensions, see [Add Tableau Viz to your Dashboard Extensions](./trex_tableau_viz).
+* Updates for Tableau Viz, an easy way for you to add visualizations to your dashboard extensions using a declarative description. This release includes support for combination charts, charts with multiple mark types in the same visualization. Tableau Viz has a new input specification that support these new visualizations, see the [Tableau Viz v2 inputSpec](./trex_tableau_viz_ref_v2). For information about using Tableau Viz in your extensions, see [Add Tableau Viz to your Dashboard Extensions](./core/trex_tableau_viz).
 
     ![Tableau Viz v2 SVG image](./assets/vizapiV2.svg)
 
@@ -114,7 +114,7 @@ About this release:
 
 * Adds support for a [DataTableReader](pathname:///api/interfaces/datatablereader.html) to support pagination. Created with [Worksheet.getSummaryDataReaderAsync](pathname:///api/interfaces/worksheet.html#getsummarydatareaderasync),
 [Worksheet.getUnderlyingTableDataReaderAsync](pathname:///api/interfaces/worksheet.html#getunderlyingtabledatareaderasync), and [DataSource.getLogicalTableDataReaderAsync](pathname:///api/interfaces/datasource.html#getlogicaltabledatareaderasync).
-For more information, see [Get Data from the View](./trex_getdata).
+For more information, see [Get Data from the View](./core/trex_getdata).
 
 * Deprecated `getSummaryDataAsync`. Use [Worksheet.getSummaryDataReaderAsync](pathname:///api/interfaces/worksheet.html#getsummarydatareaderasync) instead.
 
@@ -167,9 +167,9 @@ About this release:
 
 * Minor updates and bug fixes.
 
-* Minor corrections and updates to the documentation. See [Add Tableau Workbook Formatting](./trex_format).
+* Minor corrections and updates to the documentation. See [Add Tableau Workbook Formatting](./core/trex_format).
 
-* New versions of the JavaScript library and TypeScript types (`1.8.1`). See [Use TypeScript with the Extensions API](./trex_typescript).
+* New versions of the JavaScript library and TypeScript types (`1.8.1`). See [Use TypeScript with the Extensions API](./core/trex_typescript).
 
 ----
 
@@ -184,7 +184,7 @@ About this release:
 
 About this release:
 
-This release contains updates for [Tableau Viz](./trex_tableau_viz)., including:
+This release contains updates for [Tableau Viz](./core/trex_tableau_viz)., including:
 
 
 
@@ -253,7 +253,7 @@ About this release:
     </script>
     ```
 
-  You can access the formatting in the Tableau workbook from `tableau.extensions.environment.workbookFormatting`. The property `formattingSheets` contains the array of CSS properties for the workbook, organized by `ClassNameKey`. For more information about using workbook formatting, see the [Formatting](https://github.com/tableau/extensions-api/tree/main/Samples/Formatting). sample in the Samples folder. Also see [Add Tableau Workbook Formatting](./trex_format).
+  You can access the formatting in the Tableau workbook from `tableau.extensions.environment.workbookFormatting`. The property `formattingSheets` contains the array of CSS properties for the workbook, organized by `ClassNameKey`. For more information about using workbook formatting, see the [Formatting](https://github.com/tableau/extensions-api/tree/main/Samples/Formatting). sample in the Samples folder. Also see [Add Tableau Workbook Formatting](./core/trex_format).
 
 * You can now set an event listener on changes to the dashboard layout and to the dashboard formatting. The new event types are `DashboardLayoutChanged` and `WorkbookFormattingChanged`. 
 
@@ -287,7 +287,7 @@ About this release:
 
 Starting with version 1.6 of the Dashboard Extensions API library and Tableau 2021.3, you can now add Tableau visualizations to your dashboard extensions. Tableau Viz takes a declarative description of your visualization and renders it as an SVG image that you can embed in your extension.  Version 1.6 of the Dashboard Extensions library adds the [`tableau.extensions.createVizImageAsync`](pathname:///api/interfaces/extensions.html#createvizimageasync). method, which takes a JavaScript object describing the image as an input.<br/> 
 For more information about using Tableau Viz, see: <br/>
-  - [Add Tableau Viz to Your Dashboard Extensions](./trex_tableau_viz)
+  - [Add Tableau Viz to Your Dashboard Extensions](./core/trex_tableau_viz)
   - [Tableau Viz Reference](./trex_tableau_viz_ref)
   - [Tableau Viz Sample - VizImage](https://github.com/tableau/extensions-api/tree/main/Samples/VizImage).
 
@@ -336,9 +336,9 @@ For more information about changes in this release, see [Tableau Extensions v1.5
 
 *March 2021*
 
-* You can now use Chrome version 80 and later to debug your dashboard extension in Tableau Desktop. If you are using Tableau 2021.1, or the latest maintenance releases of Tableau 2020.2, 2020.3, or 2020.4, you no longer need to use Chromium (version 79 or earlier) for debugging. For more information, see [Debug Extensions in Tableau Desktop](./trex_debugging) and [Download the Chromium Browser](./trex_debugging#download-the-chromium-browser).
+* You can now use Chrome version 80 and later to debug your dashboard extension in Tableau Desktop. If you are using Tableau 2021.1, or the latest maintenance releases of Tableau 2020.2, 2020.3, or 2020.4, you no longer need to use Chromium (version 79 or earlier) for debugging. For more information, see [Debug Extensions in Tableau Desktop](./debug/trex_debugging) and [Download the Chromium Browser](./debug/trex_debugging#download-the-chromium-browser).
 
-* If you plan to implement OAuth in your dashboard extension, you'll want to check out [Add OAuth to Dashboard Extensions](./trex_oauth), and the OAuth sample ([datadev-oauth-sign-in](https://glitch.com/~datadev-oauth-sign-in).) on Glitch.
+* If you plan to implement OAuth in your dashboard extension, you'll want to check out [Add OAuth to Dashboard Extensions](./security/trex_oauth), and the OAuth sample ([datadev-oauth-sign-in](https://glitch.com/~datadev-oauth-sign-in).) on Glitch.
 
 * Because of browser changes in Tableau, dashboard extensions running with self-signed certificates (SSL) might not work in Tableau 2021.1, or in the most recent Tableau maintenance releases: 2020.2.7+, 2020.3.6+, and 2020.4.2+. For more information, see [Known Issues](./trex_known_issues#unable_self_signed_cert).
 
@@ -360,7 +360,7 @@ About this release:
 
    To support the data model, the API also includes the `LogicalTable` object that has two properties: `caption` and `id`. The `caption` is the name of the logical table as it appears in Tableau.
 
-   For more information about getting underlying data from data sources and worksheets, see [Get Data from the Dashboard](./trex_getdata).
+   For more information about getting underlying data from data sources and worksheets, see [Get Data from the Dashboard](./core/trex_getdata).
 
    For information about the data model, see [The Tableau Data Model](https://help.tableau.com/current/pro/desktop/en-us/datasource_datamodel.htm).
 
@@ -383,7 +383,7 @@ Bugs fixed in this release:
 
 * Sandboxed Extensions are Tableau dashboard extensions that are not permitted to make external network requests. Available for testing with Tableau 2019.3. Fully supported in Tableau 2019.4.
 
-* The Extensions API SDK provides a local development environment that replicates the Tableau Hosting Cloud Service for Sandboxed Extensions. You can test your Sandboxed extensions locally with the same sandbox policies before submitting the extension to Tableau for publication. See [Create and Test Sandboxed Extensions](./trex_sandbox_test) and [Publish Sandboxed Extensions](./trex_sandbox_publish).
+* The Extensions API SDK provides a local development environment that replicates the Tableau Hosting Cloud Service for Sandboxed Extensions. You can test your Sandboxed extensions locally with the same sandbox policies before submitting the extension to Tableau for publication. See [Create and Test Sandboxed Extensions](./security/trex_sandbox_test) and [Publish Sandboxed Extensions](./publish/trex_sandbox_publish).
 
 ----
 
@@ -396,7 +396,7 @@ About this release:
 
 - The Extensions API library version 1.3 (`tableau.extensions.1.3.0.js`) is backward compatible with previous releases of the library.
 
-- Now available: Extensions API type definitions and new TypeScript samples. The latest release provides the TypeScript type definitions so that you can author your extension using TypeScript. See [Use TypeScript with the Extensions API](./trex_typescript) and [TypeScript Sample Extensions](https://github.com/tableau/extensions-api/tree/master/Samples-Typescript). on GitHub.
+- Now available: Extensions API type definitions and new TypeScript samples. The latest release provides the TypeScript type definitions so that you can author your extension using TypeScript. See [Use TypeScript with the Extensions API](./core/trex_typescript) and [TypeScript Sample Extensions](https://github.com/tableau/extensions-api/tree/master/Samples-Typescript). on GitHub.
 
 - New all-values-selected property for categorical filters (`filter.isAllSelected`). You can use this new property to determine when all values of categorical filters are selected. The `isAllSelected` property is a Boolean and returns True or False. Prior to this release, there was no way to tell if all values of categorical filters were selected. The `filter.appliedValues` method returns empty array when **(All)** is selected, so there is no way to use that method to determine if all values are selected or if no values are selected. The `isAllSelected` property is available starting with Tableau 2019.2 and the Extensions API library version 1.3 (`tableau.extensions.1.3.0.js`).
 
@@ -459,7 +459,7 @@ Changes in this release:
 
 * Upgrade to the Chromium browser, which allows modern web technologies to be used with dashboard extensions (HTML 5, CSS, native ES6 support). Tableau 2019.1 now uses Qt 5.10, The Qt WebEngine is based upon Chromium 61.0.3163.99, with additional security fixes from newer versions. With this update, you no longer need to download and use a specific version of Chromium (47.0.2526.0) to debug dashboard extensions on Tableau Desktop. You can now debug extensions in Tableau Desktop using Chrome. 
 
-* Show and hide capabilities for extensions (now you see it, now you don't). For more information, see [Show and Hide Objects in the Dashboard](./trex_show_hide).
+* Show and hide capabilities for extensions (now you see it, now you don't). For more information, see [Show and Hide Objects in the Dashboard](./core/trex_show_hide).
 
 
 
@@ -501,7 +501,7 @@ Bugs fixed in this release:
 
 New in this release:
 
-- Updated documentation. [Getting Started](./dashext/trex_getstarted), [Create a "Hello World" Dashboard Extension](./dashext/trex_create), <br/>[Debugging Extensions on Tableau Desktop](./trex_debugging), [Debugging Extensions on Tableau Server and Tableau Cloud](./trex_debug_server), [Error Codes and Error Handling for Extensions](./trex_error_handling). 
+- Updated documentation. [Getting Started](./dashext/trex_getstarted), [Create a "Hello World" Dashboard Extension](./dashext/trex_create), <br/>[Debugging Extensions on Tableau Desktop](./debug/trex_debugging), [Debugging Extensions on Tableau Server and Tableau Cloud](./debug/trex_debug_server), [Error Codes and Error Handling for Extensions](./debug/trex_error_handling). 
 
 ---
 
@@ -519,8 +519,8 @@ New in this release:
 
 - Create extensions with the look-and-feel of Tableau, using the [Tableau UI](https://tableau.github.io/tableau-ui/)., a React component library.  
 
-- New and updated documentation. See [Publishing a Dashboard Extension](./trex_publish). <br/>
-For information about developing and running an extension locally on `http://localhost` and testing it on Tableau Cloud or Tableau Server (over HTTPS), see [Load and view localhost content on sites that use secure connections](./trex_security#load-and-view-localhost-content-on-sites-that-use-secure-connections).
+- New and updated documentation. See [Publishing a Dashboard Extension](./publish/trex_publish). <br/>
+For information about developing and running an extension locally on `http://localhost` and testing it on Tableau Cloud or Tableau Server (over HTTPS), see [Load and view localhost content on sites that use secure connections](./security/trex_security#load-and-view-localhost-content-on-sites-that-use-secure-connections).
 
 Bugs fixed in this release:
 
@@ -637,7 +637,7 @@ Updated in this release:
 
 - Extensions API library goes to `12` (one better than `11`). The library has been refactored to be smaller, faster, lighter. 
 
-- Dashboard authors and users of your extension can decide whether to allow the extension to run or not. When users add an extension that can access the underlying data in a dashboard, they now see a prompt that lets them allow the extension to run. In addition, when someone opens a dashboard that contains extensions, they see a dialog box that lists information about all the extensions in the dashboard, and a prompt to allow the extensions to run. For more information, see [Accessing Underlying Data](./trex_data_access)
+- Dashboard authors and users of your extension can decide whether to allow the extension to run or not. When users add an extension that can access the underlying data in a dashboard, they now see a prompt that lets them allow the extension to run. In addition, when someone opens a dashboard that contains extensions, they see a dialog box that lists information about all the extensions in the dashboard, and a prompt to allow the extensions to run. For more information, see [Accessing Underlying Data](./security/trex_data_access)
 
 - Starting with the `0.12.7` release, the Extensions API library supports versioning. Future versions of Tableau will be able to run extensions that use earlier versions of the Extensions API library (`0.12.7` and later). You will no longer need to roll the version number of the library in your extension at every release just to enable it to run in Tableau.  For example, a dashboard extension that uses the Extensions API `0.12.7` library should run in a future release of Tableau without modification. And Tableau will provide a meaningful error message if you try to run an extension that requires a later version of the Extensions API library than the version of the API that a particular Tableau release supports. For example, if the extension uses the `0.14.0` library but the version of Tableau only supports an earlier version (`0.12.7`), users of the extension will see a message informing them that they need a later version of Tableau. 
 
@@ -856,7 +856,7 @@ Subsequently, when you drag the **Extension** on the dashboard, the dialog box s
 
 **HTTPS and security**  
 
-For information about the HTTPS requirements for extensions, see [Security and Tableau Extensions](./trex_security)
+For information about the HTTPS requirements for extensions, see [Security and Tableau Extensions](./security/trex_security)
 
 **Remote Debugging** 
 
@@ -864,7 +864,7 @@ Due to changes in this release, remote debugging does not work as expected in Ta
 ```
    "C:\Program Files\Tableau\Tableau main\bin\tableau.exe" --remote-debugging-port=8696
 ```
-For information about debugging extensions, see [Remote Debugging of JavaScript and HTML](./trex_debugging).
+For information about debugging extensions, see [Remote Debugging of JavaScript and HTML](./debug/trex_debugging).
 
 
 ---
@@ -891,7 +891,7 @@ For information about debugging extensions, see [Remote Debugging of JavaScript 
 -	New method `DataSource.getConnectionSummariesAsync`  gets a summary object for each underlying connection in a data source.
 -	New method `DataSource.getActiveTablesAsync` gets all tables used to create the data source (what you would see in the join canvas).
 
-- Logging - You can view dashboard extension activity in Tableau log files. Tableau records extension events that you can use to troubleshoot registration errors and command execution. See [Use Log files to Troubleshoot Dashboard Extensions](./trex_logging).  
+- Logging - You can view dashboard extension activity in Tableau log files. Tableau records extension events that you can use to troubleshoot registration errors and command execution. See [Use Log files to Troubleshoot Dashboard Extensions](./debug/trex_logging).  
 
 
 **Bug fixes** 

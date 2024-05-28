@@ -74,7 +74,7 @@ For example, entering the following in the Console window (while you are paused 
 
     The following screenshot illustrates what your debugging session might look like if you use the Chrome DevTools. A breakpoint was set and the extension's JavaScript code is paused in the debugger.
 
-    ![alt text](./assets/server_dbg_chrome.png "Chrome DevTools showing a the debugger paused on an extension breakpoint")
+    ![alt text](../assets/server_dbg_chrome.png "Chrome DevTools showing a the debugger paused on an extension breakpoint")
 
 ---
 
@@ -105,7 +105,7 @@ If you want to test and debug your extension (running on `http://localhost`) wit
 To temporarily get around these safety settings for the session, you can click the shield icon (or lock icon) in the browser's address bar. The alert dialog box will allow you to either load the scripts, or allow you to view the full content of the page. As soon as you load the unsafe scripts or allow the blocked content, the extension will load and will continue to be available for the duration of your session. Be sure to close the browser completely when you are finished testing. The following example shows what you might see in Chrome. 
 <br/>
 
-![alt text](./assets/online_blocked_extension.png "Chrome browser showing alert when extension running on a localhost server")
+![alt text](../assets/online_blocked_extension.png "Chrome browser showing alert when extension running on a localhost server")
 
 
 During the session, anytime you refresh or reload the web page, you will see the extensions dialog box requesting permission to run. And in the debugger console, you might see a warning message about mixed content.

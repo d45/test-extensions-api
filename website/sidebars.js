@@ -5,11 +5,12 @@ const sidebars = {
   Guides: [
     "index",
     'installation',
+    'trex_api_about',
     'trex_tableau_help',
     {
       type: 'category',
       label: 'Viz Extensions',
-      link: { type: 'doc', id: 'vizext/index' }, 
+      link: { type: 'doc', id: 'vizext/index' },
       items: [
         'vizext/trex_viz_getstarted',
         'vizext/trex_viz_overview',
@@ -30,70 +31,71 @@ const sidebars = {
         'dashext/trex_examples', 
       ],
     }, 
-    { 
+   /* { 
       type: 'category',
       label: 'Basic Concepts',
       link: {  type: 'doc', id: 'index' },
       items: [
       'trex_api_about',
       'trex_reload',
-    ],
-    },
+    ], 
+    }, */
 
     { 
       type: 'category',
       label: 'Extension Fundamentals',
-      link: {  type: 'doc', id: 'index' },
+      link: {  type: 'doc', id: 'core/index' },
       items: [
-      'trex_getdata',
-      'trex_configure',
-      'trex_tableau_viz',
-      'trex_format',
-      'trex_show_hide',
-      'trex_events',
-      'trex_typescript',
+        'core/trex_getdata',
+        'core/trex_configure',
+        'core/trex_tableau_viz',
+        'core/trex_format',
+        'core/trex_show_hide',
+        'core/trex_events',
+        'core/trex_typescript',
     ],
     },
 
     { 
       type: 'category',
       label: 'Security and Data Access',
-      link: {  type: 'doc', id: 'index' },
+      link: {  type: 'doc', id: 'security/index' },
       items: [
-      'trex_data_access',
-      'trex_security',
-      'trex_xss_guidance',
-      'trex_sandbox_test',
-      'trex_oauth',
+      'security/trex_data_access',
+      'security/trex_security',
+      'security/trex_xss_guidance',
+      'security/trex_sandbox_test',
+      'security/trex_oauth',
     ],
     },
 
     { 
       type: 'category',
       label: 'Debugging and Troubleshooting',
-      link: {  type: 'doc', id: 'index' },
+      link: {  type: 'doc', id: 'debug/index' },
       items: [
-      'trex_debugging',
-      'trex_debug_server',
-      'trex_logging',
-      'trex_error_handling',
+      'debug/trex_debugging',
+      'debug/trex_debug_server',
+      'debug/trex_reload',
+      'debug/trex_logging',
+      'debug/trex_error_handling',
     ],
     },
 
     { 
       type: 'category',
       label: 'Publishing and Distribution',
-      link: {  type: 'doc', id: 'index' },
+      link: {  type: 'doc', id: 'publish/index' },
       items: [
-      'trex_publish',
-      'trex_sandbox_publish',
-      'trex_contributing',
+      'publish/trex_publish',
+      'publish/trex_sandbox_publish',
+      'publish/trex_contributing',
     ],
     },
 
     {
       type: 'category',
-      label: 'API Reference',
+      label: 'Reference',
    /*   link: { href: "https://github.com/tableau/hyper-api-samples" }, */
       items: [
       { type: 'link', label: "Samples", href: "https://github.com/tableau/extensions-api-preview/tree/main/Samples" },

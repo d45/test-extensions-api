@@ -74,7 +74,7 @@ For convenience, you could also create a shortcut for Tableau and add the remote
 If you open the file location, you can create a new shortcut to `Tableau.exe` (call it something like *Tableau - Debug* ). Right click the shortcut to open the Properties dialog box.
 3. In the Properties dialog box, append `-remote-debugging-port=8696` at the end of the command in the **Target** text box. The debugging option goes after the closing quotation mark for `"Tableau.exe"`.
 
-![Debug Shortcut](./assets/Tableau_shortcut_debug.png)
+![Debug Shortcut](../assets/Tableau_shortcut_debug.png)
 
 ---
 ## Start Tableau Desktop and enable debugging (macOS)
@@ -110,7 +110,7 @@ After you install the Chrome (or Chromium) browser and enable debugging in Table
 Note that the name of the extension is based on the title of the web page that was loaded for the extension. If the extension hasn't loaded yet the name might be blank. See [Debugging loading and initialization issues](#debugging-loading-and-initialization-issues).
 
 
-  ![Remote Debugging](./assets/remote_debugging.gif)
+  ![Remote Debugging](../assets/remote_debugging.gif)
 
 Note that you can only debug one extension, or instance of an extension, at a time. However, you can open a new Chromium tab or window to debug additional extensions.
 
@@ -147,7 +147,7 @@ It can be difficult to hit breakpoints that occur during the loading of your pag
 The debugger will pause each time the first statement of a script runs, allowing you to debug the startup process.
 7. To get to your JavaScript code, click **Continue** several times. After your JavaScript is loaded, you can set a breakpoint in your startup code. 
 
-![Startup Debugging](./assets/onload_debugging.gif)
+![Startup Debugging](../assets/onload_debugging.gif)
 
 ---
 

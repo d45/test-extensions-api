@@ -50,7 +50,7 @@ The Desktop Tableau log file (`log.txt`) is a JSON formatted file. The extension
 
 Although, you can use any file viewer or text editor, the Tableau Log Viewer makes finding the events easy to view and navigate.
 
-![](./assets/log_viewer.png) 
+![](../assets/log_viewer.png) 
 
 
 ## Troubleshooting errors that occur during registration
@@ -74,8 +74,6 @@ Each dashboard extension must have a unique identifier. The identifier is specif
 ```
 
 Tableau uses the extension identifier and the extension version number to register the dashboard extension. At startup, Tableau checks that there are no duplicate  identifiers. If an extension is found that has the same identifier as one that is already registered, an error is logged and the extension with the duplicate identifier is not registered and does not appear in the list of available extensions.
-
-
 
 ```cli
 

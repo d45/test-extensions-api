@@ -148,4 +148,4 @@ You can add multiple instances of an extension to a dashboard or to multiple das
 
 * To get familiar with the programming interface for the Extensions API, see the [Tableau Extensions API Reference](pathname:///api).
 
-* For information about debugging your extension, see [Debug Extensions in Tableau Desktop](../trex_debugging) and [Debug Extensions in Tableau Server and Tableau Cloud](../trex_debug_server).
+* For information about debugging your extension, see [Debug Extensions in Tableau Desktop](../debug/trex_debugging) and [Debug Extensions in Tableau Server and Tableau Cloud](../debug/trex_debug_server).

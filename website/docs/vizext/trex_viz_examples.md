@@ -50,7 +50,7 @@ The viz extension samples are in the `Samples` folder.
 
 -   **[VizImage](https://github.com/tableau/extensions-api-preview/tree/main/Samples/VizImage?=target="_blank")**
 
-    Shows how you can use Tableau Viz to add visualizations to your extensions. This sample demonstrates the effects of different mark types and color palettes. For more information about Tableau Viz, see [Add Tableau Viz to Your Extensions](../trex_tableau_viz).
+    Shows how you can use Tableau Viz to add visualizations to your extensions. This sample demonstrates the effects of different mark types and color palettes. For more information about Tableau Viz, see [Add Tableau Viz to Your Extensions](../core/trex_tableau_viz).
 
 
 ---

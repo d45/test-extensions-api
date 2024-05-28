@@ -134,7 +134,7 @@ Many extensions require an author to configure the extension before using it in 
 
 While this is optional, **we strongly recommend using this popup pattern** because when an author is configuring the extension for the first time, there often isn't any content present in the extension container until the extension has been configured. Using this popup pattern will allow authors to start configuring the extension right away.
 
-*Learn more about how to implement this popup at [Add a Configuration Popup Dialog (Extensions API Documentation)](../trex_configure).*
+*Learn more about how to implement this popup at [Add a Configuration Popup Dialog (Extensions API Documentation)](../core/trex_configure).*
 
 &nbsp;
 

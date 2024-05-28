@@ -39,13 +39,13 @@ When the user selects the context menu item, or selects **Format Extensions** bu
 
 **Dashboard extensions configuration menu**
 
-![](./assets/extension_configure_menu.png)
+![](../assets/extension_configure_menu.png)
 
 ----
 
 **Viz extensions format button**
 
-![](./assets/viz_format_btn_75.png)
+![](../assets/viz_format_btn_75.png)
   
 For example, you could use the UI namespace and have the configuration function call the `displayDialogAsync()` function. The function then creates a dialog box that can be used to change settings for the extension. The parent (or initial window) for your extension might have the following JavaScript code. This example uses an initial payload string value, *defaultIntervalInMin*, to pass to the configuration dialog. The payload value is modified in the configuration dialog and is returned in the `closeDialog()` method. Alternatively, you could use a `Settings` object to store the key/value pairs that configure your extension.
 
