@@ -17,7 +17,7 @@ To create a Tableau extension you need the following components.
 
 ### What you need to get started
 
-These instructions assume that you already have cloned or download the Extensions API SDK. For information about setting up your environment and the Tableau requirements, see [Installation](installation) and [Get Started with Dashboard Extensions](trex_getstarted).
+These instructions assume that you already have cloned or download the Extensions API SDK. For information about setting up your environment and the Tableau requirements, see [Installation](../installation) and [Get Started with Dashboard Extensions](trex_getstarted).
 
 For convenience, you might want to create a folder for your "Hello World" dashboard extension in the same location where you installed or cloned the GitHub repository (for example, `HelloDemo` under `/extensions-api`). That way, you can use the same web server (`http-server`) that is used for the samples.
 
