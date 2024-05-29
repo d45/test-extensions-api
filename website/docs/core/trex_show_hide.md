@@ -1,6 +1,6 @@
 ---
 title: Show and Hide Objects in the Dashboard
-description: show or hide the dashboard extension in the dashboard
+description: Show or hide the dashboard extension in the dashboard
 ---
 
 Starting with Tableau 2019.1, you can use the `ZoneVisibilityType` enum and `setZoneVisibilityAsync` method to control whether objects in a dashboard are visible or hidden. You can use this feature to create tooltip-like popup dialog boxes, or to create animated slide-show effects by toggling the visibility of the objects in the dashboard.
@@ -36,7 +36,7 @@ The following code example iterates through the objects in the dashboard and pri
 
 If you know the name of the zone you want to hide, you can find the zone object and from that set the zone's `ZoneVisibilityType` properties. You can find and change the names of the zones in the dashboard using the Layout pane in Tableau, under **Item Hierarchy**. You want to make sure that the zones you want to show and hide are floating. 
 
-   ![](./assets/dashboard_layout_obj.png)
+   ![](../assets/dashboard_layout_obj.png)
 
 
 The following code example iterates though the objects in the dashboard to locate two named objects. The `setZoneVisibilityAsync` method that we use to show or hide a zone takes a `zoneVisibilityMap` as a parameter. This is a map of the zone (`object.id`) and a `ZoneVisibilityType` property, which can be set to `show` or `hide`(`tableau.ZoneVisibilityType.Hide`).  

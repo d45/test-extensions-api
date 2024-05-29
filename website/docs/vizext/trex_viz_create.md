@@ -296,7 +296,7 @@ This example illustrates some of the components that are common need to include 
 
 ### Debugging and testing your extension in Tableau
 
-For information about debugging your extension, see [Debug Extensions in Tableau Server and Tableau Cloud](../trex_debug_server).
+For information about debugging your extension, see [Debug Extensions in Tableau Server and Tableau Cloud](../debug/trex_debug_server).
 
 ### Code Style
 

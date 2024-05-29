@@ -61,7 +61,7 @@ The `<permissions>` element you add looks like the following:
 </dashboard-extension>
 ```
 
-The `<permissions>` element must be added under `<dashboard-extension>` immediately following the `<icon>` element. For a complete description of the manifest, see the [Tableau Dashboard Extensions Manifest File](./dashext/trex_manifest) and the [Tableau Viz Extensions Manifest File](./vizext/trex_viz_manifest).
+The `<permissions>` element must be added under `<dashboard-extension>` immediately following the `<icon>` element. For a complete description of the manifest, see the [Tableau Dashboard Extensions Manifest File](../dashext/trex_manifest) and the [Tableau Viz Extensions Manifest File](../vizext/trex_viz_manifest).
 
 If full data is not declared in the manifest file, and the extensions calls one of the APIs that accesses any underlying data or data source information, the API call fails. In addition, an error is written to the Tableau log file (`log.txt`). If you are debugging the extension with the Chromium web browser, an error is reported the console pane. The error message would look similar to the following:
 
@@ -77,7 +77,7 @@ Error: internal-error: permission-denied: Missing required permission to run get
 
 When users add an extension that requires full-data access, Tableau displays a prompt that provides the name of the extension, the URL of the extension, and brief description about the access that the extension has to the data in the workbook. Users can click **Allow** to load the extension. If a user clicks **Cancel**, the extension is not loaded and the user returns to the **Choose an Extension** dialog box.
 
-![](./assets/Add_Extension_Prompt.png)
+![](../assets/Add_Extension_Prompt.png)
 
 The name of the extension and its URL come from the values you add to the manifest file for the extension. These are the values you add for `<name>` and the `<url>` element under `<source-location>`.  
 
@@ -88,7 +88,7 @@ The name of the extension and its URL come from the values you add to the manife
 When users open a dashboard that has an extension that requires full-data access, Tableau displays a prompt that lists the names of the all the extensions in the dashboard. Users can click **Allow** to load the dashboard.
 
 
-![](./assets/Load_Extensions_Dialog.png)
+![](../assets/Load_Extensions_Dialog.png)
 
 The **Allow an Extension** dialog box provides users information about your extension. This information includes links to your website, as specified by the `website` attribute in manifest file (in the `<author>` element). Users can click on the link under **Created By** to find out more about your extension.
  The dialog box also indicates whether or not the extension requires full-data access and provides the URL of the extension.
@@ -103,4 +103,4 @@ Permissions approval can be reset through the context menu.
 
 Users can use choose to allow the extension to run by using the clicking **Reset Permissions** from the **More Options** drop-down menu of the layout container. This opens up the **Allow Extensions** dialog box where the user can change permissions for the extension.
 
-![](./assets/reset_perms.png)
+![](../assets/reset_perms.png)

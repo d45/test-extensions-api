@@ -10,7 +10,7 @@ If the dashboard extension is running on a publicly accessible web server over H
 
 The easiest way to share an extension with others is to share the workbook that contains the dashboard extension. If the extension is hosted on web site that is accessible and the extension is using HTTPS protocol, viewers of the dashboard will be able see and use the extension. However, if the users do not also have access to the dashboard extension manifest file (`.trex`), they will not be able to add the extension to other dashboards or to other workbooks.
 
-![](./assets/frelard_share_twb.png)
+![](../assets/frelard_share_twb.png)
 
 ## Publishing a dashboard extension to Tableau Server or Tableau Cloud
 
@@ -19,11 +19,11 @@ While you don't exactly publish a dashboard extension to Tableau Server or Table
 However, to run on Tableau Server or Tableau Cloud, your extension must:
 
 * Be hosted on a web server that uses HTTPS (`localhost` is the exception during development). Note that hosting your extension on the same computer that is running Tableau Server is not recommended.
-* Declare full data access (if the extension calls any functions that access the underlying data in the dashboard). 
+* Declare full data access (if the extension calls any functions that access the underlying data in the dashboard).
 * Be granted permission to run on Tableau Server or Tableau Cloud. 
 
 :::note
-If you want to test your extension with Tableau Cloud and you are running an extension on `http://localhost` during development, see [Load and view localhost content on sites that use secure connections](./trex_security#load-and-view-localhost-content-on-sites-that-use-secure-connections)
+If you want to test your extension with Tableau Cloud and you are running an extension on `http://localhost` during development, see [Load and view localhost content on sites that use secure connections](../security/trex_security#load-and-view-localhost-content-on-sites-that-use-secure-connections)
 
 :::
 
@@ -35,7 +35,7 @@ If your extension requires access to full data (underlying data) the server or s
 
 The following flowchart shows how the settings on Tableau Server or Tableau Cloud determine whether an extension is allowed or denied permission to run.
 
- ![alt text](./assets/Extensions_Safe_List_Block_List_Evaluation_2x.png "Flowchart showing the process that allows or denies an extension to run on Tableau Server or Tableau Cloud.")
+ ![alt text](../assets/Extensions_Safe_List_Block_List_Evaluation_2x.png "Flowchart showing the process that allows or denies an extension to run on Tableau Server or Tableau Cloud.")
   
 See [Manage Dashboard Extensions on Tableau Server](https://onlinehelp.tableau.com/current/server/en-us/dashboard_extensions_server.htm) or [Manage Dashboard Extensions on Tableau Cloud](https://onlinehelp.tableau.com/current/online/en-us/dashboard_extensions_server.htm) for more information.
 
@@ -61,11 +61,11 @@ Dashboard extensions that appear in the Tableau Exchange must also:
 
 * Ensure that the information in the extension manifest file (`.trex`) matches the content that you will publish in the Tableau Exchange. For example, the `name`, `description` fields are used to populate the name and description fields in the Tableau Exchange.  The icon you use in the manifest should also be the icon that is used in the Exchange. You need to provide a 280x280 pixel `.png` version of the icon. 
 
-For information about getting your extension into the Tableau Exchange, see [Submitting your Extension to the Tableau Exchange](./ux_extension_gallery).
+For information about getting your extension into the Tableau Exchange, see [Submitting your Extension to the Tableau Exchange](../ux_extension_gallery).
 
-For information about designing an extension, see [Design Guidelines for Dashboard Extensions](./ux_design).
+For information about designing an extension, see [Design Guidelines for Dashboard Extensions](../ux_design).
 
-![](./assets/trex_gallery.png)
+![](../assets/trex_gallery.png)
 
 ## Publishing or sharing a dashboard extension on the Communities page
 

@@ -1,5 +1,6 @@
 ---
 title: Tableau Viz Extension Manifest File
+description: The components of the Viz Extension manifest file
 ---
 
 The viz extension manifest file (`.trex`) contains metadata for the extension and is used for registration. The manifest file for viz extensions is similar to the file used for dashboard extensions in structure, but instead of the `dashboard-extension` element, you define a `worksheet-extension` element. The manifest files are not interchangeable.

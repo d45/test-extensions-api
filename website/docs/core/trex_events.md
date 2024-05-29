@@ -1,6 +1,6 @@
 ---
 title: Events and Event Handling
-description: adding events and event handling
+description: Adding event listeners and event handling
 ---
 
 Using the Extensions API, you can listen for events on objects, such as worksheets, parameters, and settings. The Tableau Extension API supports a range of events and provides methods for adding and removing event listeners. To manage the event listener, each object has an *event listener manager*. The manager provides a way to add or remove multiple events on objects independently.

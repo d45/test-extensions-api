@@ -20,4 +20,4 @@ For Tableau 2022.3 (and later) and the Tableau Dashboard Extensions API v1.9 (an
 
 ---
 
-For information about how to add a Tableau Viz, see [Add Tableau Viz to your Dashboard Extensions](./trex_tableau_viz).
+For information about how to add a Tableau Viz, see [Add Tableau Viz to your Dashboard Extensions](./core/trex_tableau_viz).

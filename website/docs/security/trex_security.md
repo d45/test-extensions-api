@@ -86,7 +86,7 @@ file: Example.trex
 
 ```
 
-For more information, see [Use Log files to Troubleshoot Dashboard Extensions](./trex_logging).
+For more information, see [Use Log files to Troubleshoot Dashboard Extensions](../debug/trex_logging).
 
 ## Avoid mixed content - use HTTPS or site-relative paths for resources
 
@@ -129,7 +129,7 @@ For example, you can author a workbook in Tableau Desktop that uses an extension
 
 Note the following considerations:
 
-- If Tableau Server is using HTTPS, your extension might not load if it is using `http://localhost`. The same situation occurs with Tableau Cloud. This is because it is generally not a good practice to embed an HTTP `<iframe>` inside of an HTTPS web page, and the default settings of most browsers will consider this as unsafe content. To temporarily allow the extension to run while you are testing, see [Load and view localhost content on sites that use secure connections](./trex_debug_server#load-and-view-localhost-content-on-sites-that-use-secure-connections).
+- If Tableau Server is using HTTPS, your extension might not load if it is using `http://localhost`. The same situation occurs with Tableau Cloud. This is because it is generally not a good practice to embed an HTTP `<iframe>` inside of an HTTPS web page, and the default settings of most browsers will consider this as unsafe content. To temporarily allow the extension to run while you are testing, see [Load and view localhost content on sites that use secure connections](../debug/trex_debug_server#load-and-view-localhost-content-on-sites-that-use-secure-connections).
 
 - In the manifest file (`.trex`) for the extension, you must specify the DNS name `localhost` and **not** the IP address (for example, `127.0.0.1`). 
 
@@ -142,20 +142,22 @@ If you want to test your extension (running on `http://localhost`) with Tableau 
 To temporarily get around these safety settings for the session, you can click the shield icon (or lock icon) in the browser's address bar. The alert dialog box will allow you to either load the scripts, or allow you to view the full content of the page. As soon as you load the unsafe scripts or allow the blocked content, the extension will load and will continue to be available for the duration of your session. Be sure to close the browser completely when you are finished testing. The following example shows what you might see in Chrome.
 <br/>
 
-![Chrome browser showing alert when extension running on a localhost server](./assets/online_blocked_extension.png)
+![Chrome browser showing alert when extension running on a localhost server](../assets/online_blocked_extension.png)
 
 
 ## Use HTTPS for production and public use
 
-In most cases, if you are distributing your extension, you will host it on a secure server. There are many options available that can provide the necessary HTTPS support. 
+In most cases, if you are distributing your extension, you will host it on a secure server. There are many options available that can provide the necessary HTTPS support.
 
 - Free hosting services (such as GitHub, Heroku).
-- Using an existing HTTPS server. If you or your organization already have a certificate authority that you use for your organization's intranet, you can use that certificate on your server.   
+
+- Using an existing HTTPS server. If you or your organization already have a certificate authority that you use for your organization's intranet, you can use that certificate on your server.
+
 - Setting up your own HTTPS web server, using low-cost or free certificate from a CA (Comodo, GlobalSign, GoDaddy, Symantec, Let's Encrypt)
 
 ### It's for free!
-There are some free and low-cost options that you can use to host your extension that don't require much setup on your part. These include hosting your extension on GitHub and Heroku. These options don't require you to provide the web server or to pay for a certificate from a Certificate Authority. 
 
+There are some free and low-cost options that you can use to host your extension that don't require much setup on your part. These include hosting your extension on GitHub and Heroku. These options don't require you to provide the web server or to pay for a certificate from a Certificate Authority.
 
 1. Host your extension on GitHub Pages.
 

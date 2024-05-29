@@ -1,4 +1,4 @@
-# Viz Extensions
+# Extension Fundamentals
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

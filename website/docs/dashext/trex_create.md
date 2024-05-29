@@ -1,6 +1,6 @@
 ---
 title: Create a 'Hello World" Dashboard Extension
-description: create a dashboard extension
+description: Create a dashboard extension
 ---
 
 To create a Tableau extension you need the following components.
@@ -17,7 +17,7 @@ To create a Tableau extension you need the following components.
 
 ### What you need to get started
 
-These instructions assume that you already have cloned or download the Extensions API SDK. For information about setting up your environment and the Tableau requirements, see [Get Started](trex_getstarted).
+These instructions assume that you already have cloned or download the Extensions API SDK. For information about setting up your environment and the Tableau requirements, see [Installation](../installation) and [Get Started with Dashboard Extensions](trex_getstarted).
 
 For convenience, you might want to create a folder for your "Hello World" dashboard extension in the same location where you installed or cloned the GitHub repository (for example, `HelloDemo` under `/extensions-api`). That way, you can use the same web server (`http-server`) that is used for the samples.
 
@@ -68,7 +68,6 @@ Name the manifest file for your extension (for example, `HelloExtension` and sav
 - After you have created the HTML and JavaScript files for your extension, you use this `.trex` file to add the extension to a Tableau dashboard. To do that, you drag the **Extension** object on to the dashboard. In the **Choose an Extension** dialog box, click **My Extensions** to locate and open the manifest file you just created.
 
 - For information about the manifest file and about adding version information, see the [Tableau Extension Manifest](trex_manifest).
-
 
 ---
 
@@ -162,7 +161,6 @@ Your web application must include an HTML page. This page should link to the Ext
 
    ```
 
-
 ---
 
 ### Test your extension in Tableau
@@ -179,7 +177,7 @@ After you have created the manifest file (`.trex`) and have hosted your web app 
 
    - If not, and you see a 404 error, verify that you specified the correct URL to serve the page in the `.trex` file.
 
-   - Tableau parses the `.trex` file when you add the extension to the dashboard. If you make changes to the `.trex` file after you have added it to the dashboard, you need to remove the extension and re-add it. See [What Happens When you Reload an Extension](../trex_reload)
+   - Tableau parses the `.trex` file when you add the extension to the dashboard. If you make changes to the `.trex` file after you have added it to the dashboard, you need to remove the extension and re-add it. See [What Happens When you Reload an Extension](../debug/trex_reload)
 
 ---
 
@@ -236,9 +234,9 @@ After your extension is installed and showing up in Tableau, you can continue to
    ![alt text](../assets/extension_reload_menu.png "Shortcut menu showing the Reload option")
 
 
-For information about debugging your extension, see [Debug Extensions in Tableau Desktop](../trex_debugging) and [Debug Extensions in Tableau Server and Tableau Cloud](../trex_debug_server).
+For information about debugging your extension, see [Debug Extensions in Tableau Desktop](../debug/trex_debugging) and [Debug Extensions in Tableau Server and Tableau Cloud](../debug/trex_debug_server).
 
-You can also use the Tableau log files to identify issues, see [Use Log files to Troubleshoot Dashboard Extensions](../trex_logging).
+You can also use the Tableau log files to identify issues, see [Use Log files to Troubleshoot Dashboard Extensions](../debug/trex_logging).
 
 ---
 

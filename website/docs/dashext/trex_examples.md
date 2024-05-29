@@ -22,7 +22,7 @@ The following instructions assume that you have already downloaded and extracted
 
 The dashboard extension samples are in the `Samples` folder. There is also a step-by-step tutorial you can follow in the `Tutorial` folder.
 
-The [Samples-Typescript](https://github.com/tableau/extensions-api/tree/master/Samples-Typescript) folder shows how you can use the Extensions API type definitions to create extensions in TypeScript. For more information, see [Use TypeScript with the Extensions API](../trex_typescript).
+The [Samples-Typescript](https://github.com/tableau/extensions-api/tree/master/Samples-Typescript) folder shows how you can use the Extensions API type definitions to create extensions in TypeScript. For more information, see [Use TypeScript with the Extensions API](../core/trex_typescript).
 
 
 
@@ -54,11 +54,11 @@ The [Samples-Typescript](https://github.com/tableau/extensions-api/tree/master/S
 
 - **[Samples-Typescript](https://github.com/tableau/extensions-api/tree/master/Samples-Typescript?=target="_blank")**
 
-    The **Samples-Typescript** folder shows how you can use the Extensions API type definitions to create extensions in TypeScript. The sample extensions include TypeScript versions of many of the JavaScript samples. For more information, see [Use the TypeScript samples](#use-the-typescript-samples) and [Use TypeScript with the Extensions API](../trex_typescript).
+    The **Samples-Typescript** folder shows how you can use the Extensions API type definitions to create extensions in TypeScript. The sample extensions include TypeScript versions of many of the JavaScript samples. For more information, see [Use the TypeScript samples](#use-the-typescript-samples) and [Use TypeScript with the Extensions API](../core/trex_typescript).
 
 - **[VizImage](https://github.com/tableau/extensions-api/tree/main/Samples/VizImage?=target="_blank")**
 
-    Shows how you can use Tableau Viz to add visualizations to your dashboard extensions. This sample demonstrates the effects of different mark types and color palettes. For more information about Tableau Viz, see [Add Tableau Viz to Your Dashboard Extensions](../trex_tableau_viz).
+    Shows how you can use Tableau Viz to add visualizations to your dashboard extensions. This sample demonstrates the effects of different mark types and color palettes. For more information about Tableau Viz, see [Add Tableau Viz to Your Dashboard Extensions](../core/trex_tableau_viz).
 
 - **[Formatting](https://github.com/tableau/extensions-api/tree/main/Samples/Formatting?=target="_blank")**
 
@@ -159,4 +159,4 @@ npm run dev
   - In the dashboard, under **Objects**, select **Extension** and drag it on to the dashboard.  
   - In the **Choose an Extension** dialog box, click **My Extensions**.
   - Browse to the directory where the samples are located. For example, if you downloaded or cloned the GitHub repository, go to `\extensions-api\Samples-Typescript`. The folder contains the TypeScript versions of the Datasources, Filtering, and Parameters samples.
-  - If you want to experiment with your own TypeScript code for extensions, you can use the same infrastructure that the TypeScript samples use. Create a folder in the **Samples-Typescript** directory and then add your extension source files. Add an entry to the `webpack.config.js` file for your extension TypeScript file. Update the path to your extension in the `.trex` file. Build and run your extension using the same commands you use to build the samples. For more information, see [Use TypeScript with the Extensions API](../trex_typescript).
+  - If you want to experiment with your own TypeScript code for extensions, you can use the same infrastructure that the TypeScript samples use. Create a folder in the **Samples-Typescript** directory and then add your extension source files. Add an entry to the `webpack.config.js` file for your extension TypeScript file. Update the path to your extension in the `.trex` file. Build and run your extension using the same commands you use to build the samples. For more information, see [Use TypeScript with the Extensions API](../core/trex_typescript).

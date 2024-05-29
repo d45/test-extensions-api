@@ -1,5 +1,6 @@
 ---
 title: Get Started with Viz Extensions
+description: Get started with Viz Extensions
 tags: [Getting started]
 ---
 
